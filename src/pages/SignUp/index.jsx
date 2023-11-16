@@ -26,10 +26,10 @@ export function SignUp() {
                     <h2>Senha</h2>
                     <Input placeholder="No mínimo 6 caracteres" />
 
-                    <Button title="Entrar" />
+                    <Button title="Cadastrar" />
 
                     <Links>
-                        Criar uma conta
+                        Já tenho uma conta
                     </Links>
                 </div>
 

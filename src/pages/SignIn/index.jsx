@@ -8,23 +8,27 @@ export function SignIn() {
         <Container>
             <Form>
 
-                <img src="../../../src/assets/polygon.png" alt="" />
-
-                <div id="signin">
-                    <h1>food explorer</h1>                  
+                <div id="top">
+                    <img src="/src/assets/polygon.png" alt="blue polygon" />
+                    <h1>food explorer</h1>                    
                 </div>
 
-                <h2>Email</h2>
-                <Input placeholder="Exemplo: exemplo@exemplo.com.br" />
+                <div id="signin">
+                    <header>
+                        <h1>Faça login</h1>
+                    </header>
+                    <h2>Email</h2>
+                    <Input placeholder="Exemplo: exemplo@exemplo.com.br" />
 
-                <h2>Senha</h2>
-                <Input placeholder="No mínimo 6 caracteres" />
+                    <h2>Senha</h2>
+                    <Input placeholder="No mínimo 6 caracteres" />
 
-                <Button title="Entrar" />
+                    <Button title="Entrar" />
 
-                <Links>
-                    Criar uma conta
-                </Links>
+                    <Links>
+                        Criar uma conta
+                    </Links>                    
+                </div>
 
 
             </Form>

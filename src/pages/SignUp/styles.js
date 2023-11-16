@@ -9,10 +9,6 @@ export const Container = styled.div`
 
     justify-content: center;
     align-items: center;
-    
-    @media (min-width: 900px) {  
-       
-    }
 
 `;
 
@@ -37,8 +33,10 @@ export const Form = styled.form`
 
     #signup {
 
-        > h1 {
-            visibility: hidden;
+        > header {
+            > h1 {
+                visibility: hidden;
+            }
         }
     
         > h2 {
@@ -74,11 +72,12 @@ export const Form = styled.form`
             > header {
                 display: flex;
                 justify-content: center;
+                
+                > h1 {
+                    visibility: visible;
+                }
             }
 
-            > h1 {
-                visibility: visible;
-            }
         }
         
     }
