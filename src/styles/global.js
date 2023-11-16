@@ -4,7 +4,10 @@ export default createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
+    }
+
+    :root {
+        font-size: 62.5%;
     }
 
     body {
@@ -16,13 +19,13 @@ export default createGlobalStyle`
 
     body, input, textarea {
         font-family: 'Roboto Slab', serif;
-        font-size: 16px;
+        font-size: 1.6rem;
         outline: none;
     }
 
     button {
         font-family: Poppins;
-        font-size: 14px;
+        font-size: 1.4rem;
     }
 
     a {

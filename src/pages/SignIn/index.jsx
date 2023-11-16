@@ -8,9 +8,10 @@ export function SignIn() {
         <Container>
             <Form>
 
+                <img src="../../../src/assets/polygon.png" alt="" />
+
                 <div id="signin">
-                    <img src="../../assets/polygon.png" alt="blue polygon" />
-                    <h1>food explorer</h1>                    
+                    <h1>food explorer</h1>                  
                 </div>
 
                 <h2>Email</h2>

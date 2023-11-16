@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 316px;
     display: flex;
+    max-width: 34.8rem;
     align-items: center;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_900 };
@@ -11,8 +11,7 @@ export const Container = styled.div`
     border-radius: 8px;
 
     > input {
-        height: 48px;
-        width: 100%;
+        width: 31.6rem;
 
         padding: 12px 14px;
 
@@ -27,5 +26,9 @@ export const Container = styled.div`
 
     > svg {
         margin-left: 16px;
+    }
+
+    @media (min-width: 900px) {
+        width: 34.8rem;
     }
 `;
