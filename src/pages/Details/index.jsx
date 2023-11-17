@@ -1,4 +1,8 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { FiPlus, FiMinus } from "react-icons/fi";
+import { PiReceipt } from "react-icons/pi";
+
 
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
@@ -11,26 +15,45 @@ export function Details () {
         <Container>
             <Header/>
 
-            <ButtonText title="voltar"/>
 
-            <Section title="Prato" />
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
+            <main>
 
-            <Section>
-                <Tag title="tomate"/>
-                <Tag title="pepino"/>
-            </Section>
+                <Content>
+                    <div id="back">
+                        <MdKeyboardArrowLeft id="arrow"/>
+                        <ButtonText title="voltar"/>
+                    </div>
+                    
+                    <img src="/src/assets/Mask group.png" alt="salad" />
 
-            <div>
-                <h1>Hello World</h1>
-                <span>hello</span>
+                    <h1>Salada Ravanello</h1>
+                    <p>Rabanetes, folhas verdes e molho 
+                        agridoce salpicado com gergelim.</p>
 
-                <Button title="pedir"/>
-            </div>
+                    <Section id="ingredients">
+                        <div className="tags">
+                            <Tag title="alface"/>
+                            <Tag title="cebola"/>
+                            <Tag title="pão naan"/>
+                        </div>
+                    </Section>
+                    <Section id="ingredients">
+                        <div className="tags">
+                            <Tag title="pepino"/>
+                            <Tag title="rabanete"/>
+                            <Tag title="tomate"/>
+                        </div>
+                    </Section>
+                    
+                    <div id="buy">
+                        <FiMinus />
+                        <h1>01</h1>
+                        <FiPlus />
+                        <Button icon={<PiReceipt />}  title="pedir-R$ 25,00" className="custom-button" />
+                    </div>
+                    
+                </Content>
+            </main>
         </Container>
     )
 }
