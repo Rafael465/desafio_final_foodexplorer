@@ -15,8 +15,7 @@ export const Container = styled.div`
 
     > main {
         grid-area: content;
-    } 
-
+    }
 `;
 
 export const Content = styled.div`
@@ -76,6 +75,7 @@ export const Content = styled.div`
         width: 316px;
 
         margin-top: 24px;
+        margin-bottom: 54px;
 
         .custom-button .icon {
             display: flex;

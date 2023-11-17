@@ -9,21 +9,20 @@ import { Button } from '../../components/Button';
 import { Section } from "../../components/Section";
 import { Tag } from "../../components/Tag";
 import { ButtonText } from "../../components/ButtonText";
+import { Footer } from "../../components/Footer";
 
 export function Details () {
     return (
         <Container>
             <Header/>
 
-
             <main>
-
                 <Content>
                     <div id="back">
                         <MdKeyboardArrowLeft id="arrow"/>
                         <ButtonText title="voltar"/>
                     </div>
-                    
+
                     <img src="/src/assets/Mask group.png" alt="salad" />
 
                     <h1>Salada Ravanello</h1>
@@ -54,6 +53,8 @@ export function Details () {
                     
                 </Content>
             </main>
+
+            <Footer id="footer"/>
         </Container>
     )
 }
