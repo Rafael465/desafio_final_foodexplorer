@@ -48,6 +48,15 @@ export const Form = styled.form`
         > button {
             margin-top: 32px;
         }
+
+        #login {
+        display: flex;
+        margin-top: 32px;
+        justify-content: center;
+        font-size: 14px;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    }
     }
 
     @media (min-width: 900px) {
@@ -81,14 +90,5 @@ export const Form = styled.form`
         }
         
     }
-
-`;
-
-export const Links = styled.div`
-    
-    display: flex;
-    font-size: 1.4rem;
-    margin-top: 32px;
-    justify-content: center;
 
 `;

@@ -2,12 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
+    
+
 `;
 
 export const Form = styled.form`
     display: flex;
     justify-content: center;
-    
+
+    margin-bottom: 62px;
 
     #top {
         display: flex;
@@ -44,5 +47,18 @@ export const Form = styled.form`
 
 export const Menu = styled.ul`
 
+    h1 {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .card {
+        margin-left: 24px;
+        margin-bottom: 24px;
+    }
+
+`;
+
+export const Content = styled.form`
 
 `;

@@ -1,7 +1,9 @@
-import { Container, Form, Menu  } from "./styles";
+import { Container, Form, Menu, Content  } from "./styles";
 
 
 import { Header } from "../../components/Header";
+import { Section } from "../../components/Section";
+import { Note } from "../../components/Note";
 import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
 
@@ -22,15 +24,42 @@ export function Home() {
                 </div>
 
                              
-            </Form>
+            </Form>              
 
-            <h1>Refeições</h1>
-            
-            <Card />
+            <Menu>
+                <h1>Refeições</h1>
+
+                <div id="refeições">
+                    <Card className="card" />
+                </div>
+
+                <h1>Pratos Principais</h1>
+
+                <div id="principais">
+                    <Card className="card" />
+                </div>
+
+                <h1>Bebidas</h1>
+
+                <div id="bebidas">
+                    <Card className="card" />
+                </div>
 
 
-            <Menu>                
             </Menu>
+            <Content>
+                <Section title="Refeições">
+                    <Note data={{
+                        title: 'Salada Ravanello',
+                        tags: [
+                            {id: '1', name: 'cebola'},
+                            {id: '2', name: 'alface'}
+                        ]
+                    }} />
+
+                </Section>
+
+            </Content>
 
             <Footer />
 
