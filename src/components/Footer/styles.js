@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: 77px;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_700};
-
-    footer {
+    
+    .bottom {
+        background-color: ${({ theme }) => theme.COLORS.DARK_700};
+        height: 77px;
         width: 100%;
+
+        margin-top: auto;
 
         display: flex;
         align-items: center;

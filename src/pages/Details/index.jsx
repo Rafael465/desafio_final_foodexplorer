@@ -18,42 +18,41 @@ export function Details () {
 
             <main>
                 <Content>
-                    <div id="back">
-                        <MdKeyboardArrowLeft id="arrow"/>
-                        <ButtonText title="voltar"/>
+                    <div className="desktop">
+                        <div id="back">
+                            <MdKeyboardArrowLeft id="arrow"/>
+                            <ButtonText title="voltar"/>
+                        </div>
+
+                        <img src="/src/assets/Mask group.png" alt="salad" />
                     </div>
 
-                    <img src="/src/assets/Mask group.png" alt="salad" />
+                    <div id="description">
+                        <h1>Salada Ravanello</h1>
+                        <p>Rabanetes, folhas verdes e molho 
+                            agridoce salpicado com gergelim. O pão naan dá um toque especial.</p>
 
-                    <h1>Salada Ravanello</h1>
-                    <p>Rabanetes, folhas verdes e molho 
-                        agridoce salpicado com gergelim.</p>
-
-                    <Section id="ingredients">
-                        <div className="tags">
-                            <Tag title="alface"/>
-                            <Tag title="cebola"/>
-                            <Tag title="pão naan"/>
+                        <Section id="ingredients">
+                            <div className="tags">
+                                <Tag title="alface"/>
+                                <Tag title="cebola"/>
+                                <Tag title="pão naan"/>
+                                <Tag title="pepino"/>
+                                <Tag title="rabanete"/>
+                                <Tag title="tomate"/>
+                            </div>
+                        </Section>
+                        
+                        
+                        <div id="buy">
+                            <FiMinus />
+                            <h1>01</h1>
+                            <FiPlus />
+                            <Button icon={<PiReceipt />}  title="pedir-R$ 25,00" className="custom-button" />
                         </div>
-                    </Section>
-                    <Section id="ingredients">
-                        <div className="tags">
-                            <Tag title="pepino"/>
-                            <Tag title="rabanete"/>
-                            <Tag title="tomate"/>
-                        </div>
-                    </Section>
-                    
-                    <div id="buy">
-                        <FiMinus />
-                        <h1>01</h1>
-                        <FiPlus />
-                        <Button icon={<PiReceipt />}  title="pedir-R$ 25,00" className="custom-button" />
-                    </div>
-                    
+                    </div>                    
                 </Content>
             </main>
-
             <Footer id="footer"/>
         </Container>
     )

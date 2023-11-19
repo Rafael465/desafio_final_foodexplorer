@@ -25,7 +25,16 @@ export const Container = styled.div`
             font-size: 21px;
         }
     }
+
+    .search {
+        display: none;
+    }
     
+    @media (min-width: 1024px) {
+        .search {
+            display: block;
+        }
+    }
 `;
 
 export const Nav = styled.div`
@@ -35,6 +44,10 @@ export const Nav = styled.div`
 
     svg {
         font-size: 24px;
+    }
+
+    @media (min-width: 1024px) {
+        display: none;
     }
 `;
 
@@ -48,5 +61,9 @@ export const Notification = styled.div`
 
     svg {
         font-size: 32px;
+    }
+
+    @media (min-width: 1024px) {
+        display: none;
     }
 `;
