@@ -36,7 +36,15 @@ export function Add () {
         setIngredient(prevState => prevState.filter(ingredient => ingredient !== deleted));
     }
 
-    async function handleNewDish(){
+    async function handleNewFood(){     
+        if (!title) {
+            return alert("Digite o título do prato.")
+        }
+
+        if (newIngredient) {
+            return alert("Clique em adicionar para adicionar o ingrediente.")
+        }
+        
         await api.post("/foods", {
             title,
             description,
@@ -121,7 +129,7 @@ export function Add () {
                       
                     <Button  
                         title="Salvar alterações"
-                        onClick={handleNewDish}
+                        onClick={handleNewFood}
                         className="custom-button" 
                     />
                 
