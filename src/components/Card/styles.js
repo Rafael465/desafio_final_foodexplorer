@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,21 +10,27 @@ export const Container = styled.button`
     height: 292px;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_200};
-    border-color: ${({ theme }) => theme.COLORS.DARK_300};
     border: 1px solid;
+    border-color: ${({ theme }) => theme.COLORS.DARK_300};
 
-    img {
-        width: 88px;
-        margin-bottom: 12px;
-    }
-
-    #title {
+    #details {
         display: flex;
+        flex-direction: column;
         align-items: center;
 
-        margin-bottom: 12px;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        img {
+            width: 88px;
+            margin-bottom: 12px;
+        }
+    
+        #title {
+            display: flex;
+            align-items: center;
+    
+            margin-bottom: 12px;
+    
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        }
     }
 
     #buy {

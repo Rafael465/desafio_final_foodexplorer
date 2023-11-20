@@ -54,9 +54,10 @@ export const Form = styled.form`
             margin-top: 32px;
             justify-content: center;
             font-size: 14px;
+            
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
         }
 
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
 
     @media (min-width: 900px) {

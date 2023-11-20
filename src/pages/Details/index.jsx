@@ -2,6 +2,7 @@ import { Container, Content } from "./styles";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { PiReceipt } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
 
 import { Header } from '../../components/Header';
@@ -19,10 +20,10 @@ export function Details () {
             <main>
                 <Content>
                     <div className="desktop">
-                        <div id="back">
+                        <Link id="back" to="/">
                             <MdKeyboardArrowLeft id="arrow"/>
                             <ButtonText title="voltar"/>
-                        </div>
+                        </Link>
 
                         <img src="/src/assets/Mask group.png" alt="salad" />
                     </div>

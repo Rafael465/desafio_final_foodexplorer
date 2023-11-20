@@ -26,6 +26,8 @@ export const Content = styled.div`
             display: flex;
     
             margin-top: 36px;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
             
             #arrow {
                 font-size: 32px;
