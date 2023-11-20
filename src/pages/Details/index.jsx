@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Container, Content } from "./styles";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
@@ -8,11 +9,13 @@ import { Link } from 'react-router-dom';
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
 import { Section } from "../../components/Section";
-import { Tag } from "../../components/Tag";
+import { Ingredient } from "../../components/Ingredient";
 import { ButtonText } from "../../components/ButtonText";
 import { Footer } from "../../components/Footer";
 
 export function Details () {
+
+
     return (
         <Container>
             <Header/>
@@ -35,12 +38,12 @@ export function Details () {
 
                         <Section id="ingredients">
                             <div className="tags">
-                                <Tag title="alface"/>
-                                <Tag title="cebola"/>
-                                <Tag title="pão naan"/>
-                                <Tag title="pepino"/>
-                                <Tag title="rabanete"/>
-                                <Tag title="tomate"/>
+                                <Ingredient title="alface"/>
+                                <Ingredient title="cebola"/>
+                                <Ingredient title="pão naan"/>
+                                <Ingredient title="pepino"/>
+                                <Ingredient title="rabanete"/>
+                                <Ingredient title="tomate"/>
                             </div>
                         </Section>
                         

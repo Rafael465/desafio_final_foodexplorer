@@ -1,13 +1,37 @@
 import { Container, Form, Menu, Content  } from "./styles";
 
+import { api } from "../../services/api";
+
 
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
-import { Note } from "../../components/Note";
+import { Food } from "../../components/Food";
 import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function Home() {
+
+    const [search, setSearch] = useState("");
+    const [ingredientSelected, setIngredientSelected] = useState([]);
+    const [foods, setFoods] = useState([]);
+
+    const navigate = useNavigate();
+
+    function handleDetails(id){
+        navigate(`/details/${id}`);
+    }
+
+    useEffect(() => {
+        async function fetchFoods() {
+            const response = await api.get(`/foods?title=${search}&ingredient=${ingredientSelected}`);
+            setFoods(response.data);
+        }
+
+        fetchFoods();
+    }, [ingredientSelected, search]);
+
     return (
         <Container>
 
@@ -23,42 +47,20 @@ export function Home() {
                     </div>
                 </div>
 
-                             
-            </Form>              
+            </Form>
 
-            <Menu>
-                <h1>Refeições</h1>
-
-                <div id="refeições">
-                    <Card className="card" />
-                </div>
-
-                <h1>Pratos Principais</h1>
-
-                <div id="principais">
-                    <Card className="card" />
-                </div>
-
-                <h1>Bebidas</h1>
-
-                <div id="bebidas">
-                    <Card className="card" />
-                </div>
-
-
-            </Menu>
             <Content>
-                <Section title="Refeições">
-                    <Note data={{
-                        title: 'Salada Ravanello',
-                        tags: [
-                            {id: '1', name: 'cebola'},
-                            {id: '2', name: 'alface'}
-                        ]
-                    }} />
-
+                <Section title="Minhas notas">
+                    {
+                        foods.map(food => (
+                            <Food
+                                key={String(food.id)}
+                                data={food}
+                                onClick={() => handleDetails(note.id)}                                
+                            />
+                        ))
+                    }
                 </Section>
-
             </Content>
 
             <Footer />

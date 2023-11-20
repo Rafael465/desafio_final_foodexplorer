@@ -1,16 +1,16 @@
 import { Container } from './styles';
-import { Tag } from '../Tag';
+import { Ingredient } from '../Ingredient';
 
-export function Note({ data, ...rest }) {
+export function Food({ data, ...rest }) {
     return (
         <Container {...rest}>
             <h1>{data.title}</h1>
 
             {
-                data.tags &&
+                data.ingredient &&
                 <footer>
                     {
-                        data.tags.map( tag => <Tag key={tag.name} title={tag.name} />)
+                        data.ingredient.map( ingredient => <Ingredient key={ingredient.name} title={ingredient.name} />)
                     }
                 </footer>
             }
