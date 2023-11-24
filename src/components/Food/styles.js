@@ -1,26 +1,64 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-    width: 100%;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    width: 210px;
+    height: 290px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     border: none;
-    border-radius: 10px;
+    border-radius: 8px;
+    
+    padding: 24px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    
+    background-color: pink;
 
-    padding: 22px;
-    margin-bottom: 16px;
-
-    > h1 {
-        flex: 1;
-        text-align: left;
-        font-weight: 700;
-        font-size: 24px;
-        color: ${({ theme }) => theme.COLORS.WHITE};
+    img {
+        width: 88px;
     }
 
-    > footer {
-        width: 100%;
+    #foodName {
         display: flex;
-        margin-top: 24px;
+        align-items: center;
+
+        margin: 12px 0;
+        
+        > h1 {
+            flex: 1;        
+            text-align: left;
+            
+            font-size: 14px;
+            line-height: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            
+            color: ${({ theme }) => theme.COLORS.WHITE};
+        }
+    }
+
+    h2 {
+        margin-bottom: 12px;
+        color: ${({ theme }) => theme.COLORS.CAKE_200};
+    }
+
+    #amount {
+        display: flex;
+        gap: 14px;
+
+        margin-bottom: 16px;
     }
 `;
+    {/* 
+        > footer {
+            width: 100%;
+        
+            display: flex;
+            
+            margin-top: 24px;
+        }
+    */}

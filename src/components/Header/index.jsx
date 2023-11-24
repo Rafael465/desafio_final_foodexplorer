@@ -25,9 +25,10 @@ export function Header() {
                 <h1>food explorer</h1> 
             </div>
 
-            <button onClick={signOut}>
-                logout
-            </button>
+            {/* <button onClick={signOut}>
+                    logout
+                </button>
+            */}
 
             {
                 //[USER_ROLE.ADMIN].includes(user.role) && 

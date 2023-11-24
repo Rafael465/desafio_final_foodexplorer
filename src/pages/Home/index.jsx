@@ -46,17 +46,38 @@ export function Home() {
                         <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
                     </div>
                 </div>
-
             </Form>
 
             <Content>
-                <Section title="Minhas notas">
+                <Section title="Refeições">
                     {
                         foods.map(food => (
                             <Food
                                 key={String(food.id)}
                                 data={food}
-                                onClick={() => handleDetails(note.id)}                                
+                                onClick={() => handleDetails(food.id)}                                
+                            />
+                        ))
+                    }
+                </Section>
+                <Section title="Pratos Principais">
+                    {
+                        foods.map(food => (
+                            <Food
+                                key={String(food.id)}
+                                data={food}
+                                onClick={() => handleDetails(food.id)}                                
+                            />
+                        ))
+                    }
+                </Section>
+                <Section title="Bebidas">
+                    {
+                        foods.map(food => (
+                            <Food
+                                key={String(food.id)}
+                                data={food}
+                                onClick={() => handleDetails(food.id)}                                
                             />
                         ))
                     }
