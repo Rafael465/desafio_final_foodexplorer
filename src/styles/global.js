@@ -5,10 +5,15 @@ export default createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.6rem;
+        font-weight: 400;        
     }
 
     :root {
-        font-size: 62.5%;
+        font-size: 62.5%;        
 
         @media (max-width: ${DEVICE_BREAKPOINTS}) {
             
@@ -29,7 +34,8 @@ export default createGlobalStyle`
     }
 
     button {
-        font-family: Poppins;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
         font-size: 1.4rem;
     }
 

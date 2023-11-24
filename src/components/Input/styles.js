@@ -1,34 +1,33 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    width: 100%;
+    max-width: 31.6rem;
     display: flex;
-    max-width: 34.8rem;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_900 };
-    color: ${({ theme }) => theme.COLORS.LIGHT_500 };
+    color: ${({ theme }) => theme.COLORS.LIGHT_400 };
 
-    border-radius: 8px;
+    input {
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 32px;
 
-    > input {
-        width: 31.6rem;
+        padding: 1.4rem 1.2rem;
 
-        padding: 12px 14px;
-
-        color: ${({ theme }) => theme.COLORS.WHITE};
-        background: transparent;
         border: 0;
+        border-radius: 0.8rem;
 
-        &:placeholder {
-            color: ${({ theme }) => theme.COLORS.GRAY_300};
+        color: ${({ theme }) => theme.COLORS.LIGHT_400 };
+        background-color: ${({ theme }) => theme.COLORS.DARK_900 };
+
+        &::placeholder {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 400;  
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_500};
         }    
-    }
-
-    > svg {
-        margin-left: 16px;
-    }
-
-    @media (min-width: 900px) {
-        width: 34.8rem;
     }
 `;

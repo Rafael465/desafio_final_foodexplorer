@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Form } from "./styles";
+import { Container, Form, Content } from "./styles";
 import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/auth';
@@ -21,31 +21,28 @@ export function SignIn() {
     return (
         <Container>
             <Form>
-
-                <div id="top">
+                <div id="brand">
                     <img src="/src/assets/polygon.png" alt="blue polygon" />
                     <h1>food explorer</h1>                    
                 </div>
 
-                <div id="signin">
+                <Content>
                     <header>
                         <h1>Faça login</h1>
                     </header>
 
-                    <h2>Email</h2>
+                    <Input
+                        title="E-mail"
+                        placeholder="Exemplo: exemplo@exemplo.com.br"
+                        type="text"
+                        onChange={e => setEmail(e.target.value)}
+                    />
 
                     <Input 
-                    placeholder="Exemplo: exemplo@exemplo.com.br"
-                    type="text"
-                    onChange={e => setEmail(e.target.value)}
-                     />
-
-                    <h2>Senha</h2>
-
-                    <Input 
-                    placeholder="No mínimo 6 caracteres"
-                    type="password" 
-                    onChange={e => setPassword(e.target.value)}
+                        title="Senha"
+                        placeholder="No mínimo 6 caracteres"
+                        type="password" 
+                        onChange={e => setPassword(e.target.value)}
                     />
 
                     <Button title="Entrar" onClick={handleSignIn} />
@@ -53,9 +50,7 @@ export function SignIn() {
                     <Link id="create" to="/register">
                         Criar uma conta
                     </Link>                    
-                </div>
-
-
+                </Content>
             </Form>
         </Container>
     )
