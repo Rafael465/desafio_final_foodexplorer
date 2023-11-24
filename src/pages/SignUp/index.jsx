@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Form } from "./styles";
+import { Container, Form, Content } from "./styles";
 import { Link, useNavigate } from 'react-router-dom';
 
 import { api } from "../../services/api";
@@ -37,39 +37,35 @@ export function SignUp() {
     return (
         <Container>
             <Form>
-
-                <div id="top">
+                <div id="brand">
                     <img src="/src/assets/polygon.png" alt="blue polygon" />
                     <h1>food explorer</h1>                    
                 </div>
 
-                <div id="signup">
+                <Content>
                     <header>
                         <h1>Crie sua conta</h1>
                     </header>
 
-                    <h2>Seu nome</h2>
-
-                    <Input 
+                    <Input
+                        title="Seu nome"
                         placeholder="Exemplo: Maria da Silva" 
                         type="text"
                         onChange={e => setName(e.target.value)}
                     />
 
-                    <h2>Email</h2>
-
-                    <Input 
-                    placeholder="Exemplo: exemplo@exemplo.com.br" 
-                    type="text"
-                    onChange={e => setEmail(e.target.value)}
+                    <Input
+                        title="E-mail"
+                        placeholder="Exemplo: exemplo@exemplo.com.br" 
+                        type="text"
+                        onChange={e => setEmail(e.target.value)}
                     />
                     
-                    <h2>Senha</h2>
-
-                    <Input 
-                    placeholder="No mínimo 6 caracteres" 
-                    type="password"
-                    onChange={e => setPassword(e.target.value)}
+                    <Input
+                        title="Senha"
+                        placeholder="No mínimo 6 caracteres" 
+                        type="password"
+                        onChange={e => setPassword(e.target.value)}
                     />
 
                     <Button title="Cadastrar" onClick={handleSignUp} />
@@ -77,7 +73,7 @@ export function SignUp() {
                     <Link id="login" to="/">
                         Já tenho uma conta
                     </Link>
-                </div>
+                </Content>
             </Form>
         </Container>
     )

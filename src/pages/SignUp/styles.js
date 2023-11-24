@@ -1,94 +1,129 @@
 import styled from 'styled-components';
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
-
-    display: flex;
 
     width: 100%;
     height: 100vh;
 
-    justify-content: center;
+    display: flex;
     align-items: center;
-
+    justify-content: center;
 `;
 
 export const Form = styled.form`
 
-    #top {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    #brand {
+        max-width: 31.6rem;
 
         display: flex;
         align-items: center;
-
+        flex-direction: column;
+        
+        margin-bottom: 73px;
         gap: 10px;
 
         img {
-            width: 43px;
-            height: 43px;
+            width: 4.5rem;
+            height: 4.3rem;
         }
 
         > h1 {
-            font-size: 42px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 3.7rem;
         }
     }
 
-    #signup {
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
 
-        > header {
-            > h1 {
-                visibility: hidden;
-            }
+        #brand {
+            width: 100%;
+            
+            flex-direction: row;            
         }
-    
-        > h2 {
-            font-size: 1.6rem;
-            margin-top: 32px;
-            margin-bottom: 8px;
-        }
-    
-        > button {
-            margin-top: 32px;
-        }
-
-        #login {
-        display: flex;
-        margin-top: 32px;
-        justify-content: center;
-        font-size: 14px;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
-    }
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 
-        display: flex;
         width: 100%;
+
+        display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
 
-        
-        #top {
-            > h1 {
-                margin-bottom: 0px;
-            }
-        }
+        #brand {
 
-        #signup {
-            background-color: ${({ theme }) => theme.COLORS.DARK_700};
-            padding: 64px;
-            border-radius: 16px;
-
-            > header {
-                display: flex;
-                justify-content: center;
-                
-                > h1 {
-                    visibility: visible;
-                }
+            h1 {
+                font-size: 4.2rem;
             }
 
+            img {
+                width: 4.9rem;
+                height: 4.7rem;
+            }
         }
+    }
+`;
+
+export const Content = styled.div`
+
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    padding: 0 32px;
+
+    header {
+        > h1 {
+            display: none;
+
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 3.2rem;
+        }
+    }
+   
+    #login {
+        display: flex;
+        justify-content: center;
         
+        margin-top: 32px;
+
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 1.4rem;
+        
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
 
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+
+        width: 476px;
+
+        padding: 64px;
+        border-radius: 16px;
+        
+        background-color: ${({ theme }) => theme.COLORS.DARK_700};
+
+        header {
+            display: flex;
+            justify-content: center;
+
+            h1 {
+                display: block;
+                margin-bottom: 32px;
+            }
+         }
+    }
 `;

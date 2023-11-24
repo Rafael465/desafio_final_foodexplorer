@@ -9,8 +9,6 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
 `;
 
 export const Form = styled.form`
@@ -19,8 +17,7 @@ export const Form = styled.form`
 
     display: flex;
     align-items: center;
-    flex-direction: column;
-    
+    flex-direction: column;    
 
     #brand {        
         max-width: 31.6rem;
@@ -73,7 +70,6 @@ export const Form = styled.form`
                 height: 4.7rem;
             }
         }
-
     }
 `;
 
