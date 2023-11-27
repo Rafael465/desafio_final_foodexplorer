@@ -1,5 +1,7 @@
 import { Container, Form, Menu, Content  } from "./styles";
 
+import { motion } from "framer-motion";
+
 import { api } from "../../services/api";
 
 import { Header } from "../../components/Header";
@@ -7,10 +9,17 @@ import { Section } from "../../components/Section";
 import { Food } from "../../components/Food";
 import { Card } from "../../components/Card";
 import { Footer } from "../../components/Footer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function Home() {
+    const carousel = useRef();
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
+    }, []);
+
 
     const [search, setSearch] = useState("");
     const [ingredientSelected, setIngredientSelected] = useState([]);
@@ -22,17 +31,21 @@ export function Home() {
         navigate(`/details/${id}`);
     }
 
+
     useEffect(() => {
         async function fetchFoods() {
             const response = await api.get(`/foods?title=${search}&ingredient=${ingredientSelected}`, { withCredentials: true });
-            setFoods(response.data);
-        }
-
+            setFoods(response.data)
+        };
+        
         fetchFoods();
+
     }, [ingredientSelected, search]);
 
     return (
+        
         <Container>
+            
 
             <Header/>
             
@@ -48,44 +61,28 @@ export function Home() {
             </Form>
 
             <Content>
-                <Section title="Refeições">
-                    {
-                        foods.map(food => (
-                            <Food
-                                key={String(food.id)}
-                                data={food}
-                                onClick={() => handleDetails(food.id)}                                
-                            />
-                        ))
-                    }
-                </Section>
-                <Section title="Pratos Principais">
-                    {
-                        foods.map(food => (
-                            <Food
-                                id="food"
-                                key={String(food.id)}
-                                data={food}
-                                onClick={() => handleDetails(food.id)}                                
-                            />
-                        ))
-                    }
-                </Section>
-                <Section title="Bebidas">
-                    {
-                        foods.map(food => (
-                            <Food
-                                key={String(food.id)}
-                                data={food}
-                                onClick={() => handleDetails(food.id)}                                
-                            />
-                        ))
-                    }
-                </Section>
+                <motion.div ref={carousel} className="carousel" whileTap={{ cursor: "grabbing"}}>
+                    <motion.div 
+                        className="inner"
+                        drag="x"
+                        dragConstraints={{ left: -width, right: 0}}
+                    >
+
+                        {
+                            foods.map(food => (
+                                <Food className="item"
+                                    key={String(food.id)}
+                                    data={food}
+                                    onClick={() => handleDetails(food.id)}                                
+                                />                       
+                            ))
+                        }
+
+                    </motion.div>
+                </motion.div>                        
             </Content>
 
-            <Footer />
-
+            <Footer id="footer"/>
 
         </Container>
     )

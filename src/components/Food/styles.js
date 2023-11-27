@@ -13,9 +13,9 @@ export const Container = styled.button`
     border-radius: 0.8rem;
     
     padding: 2.4rem;
-    margin-bottom: 24px;
     margin-right: 24px;
     
+
     img {
         width: 8.8rem;
     }
@@ -51,12 +51,3 @@ export const Container = styled.button`
         margin-bottom: 16px;
     }
 `;
-    {/* 
-        > footer {
-            width: 100%;
-        
-            display: flex;
-            
-            margin-top: 24px;
-        }
-    */}

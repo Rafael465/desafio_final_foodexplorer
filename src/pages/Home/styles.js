@@ -2,9 +2,14 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
+    width: 100%;
+    height: 100vh;
 
-    
-
+    display: grid;
+    grid-template-rows: 105px auto;
+    grid-template-areas: 
+    "header"
+    "content";    
 `;
 
 export const Form = styled.form`
@@ -16,9 +21,6 @@ export const Form = styled.form`
 
     margin-bottom: 62px;
 
-    background-color: green;
-    
-
     #top {
         height: 120px;
         
@@ -28,7 +30,6 @@ export const Form = styled.form`
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
         
         background: var(--gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
 
@@ -59,7 +60,6 @@ export const Form = styled.form`
                 line-height: 140%;
             }
         }
-
     }
 `;
 
@@ -74,19 +74,33 @@ export const Menu = styled.ul`
         margin-left: 24px;
         margin-bottom: 24px;
     }
-
 `;
 
 export const Content = styled.form`
+    width: 100%;
+    width: 600px;
 
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 
-    overflow-y: scroll;
-    overflow-x: scroll;
-
-
-    Section {
-        gap: 10px;
+    margin: 0 auto;
+    background-color: pink;
+    
+    .inner {
+        display: flex;
+        background-color: blue;
+        width: 900px;
     }
+
+    .item {
+        pointer-events: none;
+    }
+
+    .carousel {
+        cursor: grab;
+        overflow: hidden;        
+    }    
 `;
+

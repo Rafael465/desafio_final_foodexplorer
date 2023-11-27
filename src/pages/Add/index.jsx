@@ -20,6 +20,8 @@ import { api } from "../../services/api";
 
 
 export function Add () {
+    const {food,  updateImage } = useAuth();
+
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
@@ -27,11 +29,14 @@ export function Add () {
 
     const [ingredient, setIngredient] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
+    
+    const [image, setImage] = useState(null);
 
     const navigate = useNavigate();
 
-    function handleChooseImage() {
-        document.getElementById('file').click();
+    function handleImage(event) {
+        const file = event.target.files[0];
+        setImage(file);
     }
 
     function handleAddIngredient() {
@@ -44,7 +49,6 @@ export function Add () {
     }
 
     async function handleNewFood(){ 
-        const formData = new FormData();
             
         if (!title) {
             return alert("Digite o título do prato.")
@@ -61,6 +65,8 @@ export function Add () {
             price,
             ingredient,
         });
+
+        await updateImage({ food: image });
 
         alert("Prato criado com sucesso!");
         navigate("/");        
@@ -83,15 +89,18 @@ export function Add () {
                 
                 
                 <div id="image">
-                    <div id="select" onClick={handleChooseImage}>
-                        <FiUpload />
 
+                    <div id="select">
+                        <FiUpload />
                         <h2>Escolha a imagem</h2>
                     </div>
+
                     <Input 
-                        id="file"
+                        id="image"
                         type='file'
+                        onChange={handleImage}
                     />
+
                 </div>
 
                 <Input 

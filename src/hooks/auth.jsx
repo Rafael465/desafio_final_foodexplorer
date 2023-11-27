@@ -38,11 +38,38 @@ function AuthProvider({ children }) {
         setData({});
     }
 
+    async function updateImage({food, image }) {
+        try {
+            if(image){
+                const imageUploadForm = new FormData();
+                imageUploadForm.append("image", image);
+
+                const response = await api.patch("/foods/image", imageUploadForm);
+                food.image = response.data.image ;            
+            }
+
+            await api.put("/foods", food);
+            localStorage.setItem("@foodexplorer:user", JSON.stringify(food));
+
+            setData({ food, token: data.token });
+            alert("Perfil atualizado!");
+
+        } catch (error) {
+            if (error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert("Não foi possível atualizar o perfil.");
+            }
+        }
+    }
+
     useEffect(() => {
+        const token = localStorage.getItem("@foodexplorer:token");
         const user = localStorage.getItem("@foodexplorer:user");
 
         if(user){
             setData({
+                token,
                 user: JSON.parse(user)
             });
         }
@@ -53,6 +80,7 @@ function AuthProvider({ children }) {
         <AuthContext.Provider value={{ 
             signIn,
             signOut,
+            updateImage,
             user: data.user,
             }}
             >
