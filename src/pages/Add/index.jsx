@@ -20,7 +20,7 @@ import { api } from "../../services/api";
 
 
 export function Add () {
-    const {food,  updateImage } = useAuth();
+    const { updateImage } = useAuth();
 
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
@@ -30,13 +30,13 @@ export function Add () {
     const [ingredient, setIngredient] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
     
-    const [image, setImage] = useState(null);
+    const [imageFile, setImageFile] = useState(null);
 
     const navigate = useNavigate();
 
     function handleImage(event) {
         const file = event.target.files[0];
-        setImage(file);
+        setImageFile(file);
     }
 
     function handleAddIngredient() {
@@ -58,7 +58,7 @@ export function Add () {
             return alert("Clique em adicionar para adicionar o ingrediente.")
         }
 
-        await api.post("/foods", {
+        const response = await api.post("/foods", {
             title,
             type,
             description,
@@ -66,10 +66,11 @@ export function Add () {
             ingredient,
         });
 
-        await updateImage({ food: image });
+        //console.log(food)
+        await updateImage({ imageFile : imageFile, id : response.data.id });
 
         alert("Prato criado com sucesso!");
-        navigate("/");        
+        //navigate("/");        
     }
 
     return (

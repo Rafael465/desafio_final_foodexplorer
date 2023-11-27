@@ -38,21 +38,25 @@ function AuthProvider({ children }) {
         setData({});
     }
 
-    async function updateImage({food, image }) {
+    async function updateImage({ imageFile, id }) {
         try {
-            if(image){
+           /* if(imageFile){
                 const imageUploadForm = new FormData();
-                imageUploadForm.append("image", image);
+                imageUploadForm.append("image", imageFile);
 
                 const response = await api.patch("/foods/image", imageUploadForm);
                 food.image = response.data.image ;            
-            }
+            }*/
+            const imageUploadForm = new FormData();
+            imageUploadForm.append("image", imageFile);
 
-            await api.put("/foods", food);
-            localStorage.setItem("@foodexplorer:user", JSON.stringify(food));
+            console.log(imageFile);
 
-            setData({ food, token: data.token });
-            alert("Perfil atualizado!");
+            await api.patch("/foods/" + id, imageUploadForm);
+            //localStorage.setItem("@foodexplorer:user", JSON.stringify(food));
+
+            //setData({ food, token: data.token });
+            alert("Imagem atualizado!");
 
         } catch (error) {
             if (error.response) {
