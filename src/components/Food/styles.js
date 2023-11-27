@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-    width: 210px;
-    height: 290px;
+    width: 21rem;
+    height: 29rem;
 
     display: flex;
     flex-direction: column;
@@ -10,16 +10,14 @@ export const Container = styled.button`
     justify-content: center;
 
     border: none;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     
-    padding: 24px;
+    padding: 2.4rem;
     margin-bottom: 24px;
     margin-right: 24px;
     
-    background-color: pink;
-
     img {
-        width: 88px;
+        width: 8.8rem;
     }
 
     #foodName {
@@ -32,8 +30,8 @@ export const Container = styled.button`
             flex: 1;        
             text-align: left;
             
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             

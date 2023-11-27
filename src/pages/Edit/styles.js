@@ -79,8 +79,8 @@ export const Content = styled.div`
     }
 
     #name {
-        margin-bottom: 24px;
         background-color: ${({ theme }) => theme.COLORS.DARK_800};
+        margin-bottom: 24px;
     }
 
     #type {
@@ -89,8 +89,7 @@ export const Content = styled.div`
         margin-bottom: 24px;
 
         h2 {
-            margin-bottom: 8px;
-            color: ${({ theme }) => theme.COLORS.LIGHT_400};
+            margin-bottom: 16px;
         }
 
         select {
@@ -106,33 +105,49 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
-    }  
+    }
 
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 37rem;
+    Section {
 
-        gap: 1rem;
+        h2 {
+            font-size: 1.6rem;
+            
+        }
         
-        .new {
-            width: 150px;
-            background-color: transparent;
-                            
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 37rem;
+            
+
+            .new {
+                width: 140px;
+                background-color: transparent;
+                border: 1px dashed;
+                border-color: aqua;
+                border-image-slice: 100;
+            }
+
+            .item {
+                background-color: blue;
+                width: 150px;
+            }
         }
-        .item {
-            width: 150px;
-        }
+    }
+
+    #value {
+        margin-top: 2.4rem;
+        width: 100%;
     }
 
     #price {
         width: 100%;
         max-width: 37rem; 
         
+        margin-bottom: 24px;
+        
         display: flex;
         justify-content: center;
-        
-        margin-bottom: 24px;        
       
         background-color: ${({ theme }) => theme.COLORS.DARK_800};    
     }
@@ -149,8 +164,19 @@ export const Content = styled.div`
         background-color: ${({ theme }) => theme.COLORS.DARK_800};        
     }
 
-    #save {
-        margin-bottom: 50px;
+    #buttons {
+        display: flex;
+        align-items: center;
+
+        background-color: blue;
+
+        #delete {
+            background-color: green;
+        }
+
+        #save {
+            margin-bottom: 50px;
+        }
     }
 `;
 

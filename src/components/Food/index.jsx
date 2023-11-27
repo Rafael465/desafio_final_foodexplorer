@@ -15,7 +15,7 @@ export function Food({ data, ...rest }) {
                 <MdKeyboardArrowRight id="arrow"/>
             </div>
 
-            <h2>R$ 25,00</h2>
+            <h2>R$ {data.price}</h2>
 
             <div id="amount">
                 <FiMinus />

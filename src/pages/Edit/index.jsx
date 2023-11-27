@@ -19,7 +19,7 @@ import { Input } from '../../components/Input';
 import { api } from "../../services/api";
 
 
-export function Add () {
+export function Edit () {
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
@@ -78,7 +78,7 @@ export function Add () {
                         <ButtonText title="voltar"/>
                     </Link>
 
-                    <h1>Novo Prato</h1>
+                    <h1>Editar Prato</h1>
                 </div>
                 
                 
@@ -111,30 +111,35 @@ export function Add () {
                     </select>
                 </div>
             
-                <div className="tags" >
-                    {
-                        ingredient.map((ingredient, index) => (
-                            <FoodItem 
-                                className="item"
-                                key={String(index)}
-                                value={ingredient}
-                                onClick={() => handleRemoveIngredient(ingredient)}
-                            />
-                        ))
-                    }
-                    <FoodItem 
-                        className="new"
-                        $isNew  
-                        placeholder="Novo ingrediente" 
-                        onChange={e => setNewIngredient(e.target.value)}
-                        value={newIngredient}
-                        onClick={handleAddIngredient}
-                    />
-                </div>                
+                <Section title="Ingredientes">
+                    <div className="tags" >
+                        {
+                            ingredient.map((ingredient, index) => (
+                                <FoodItem 
+                                    className="item"
+                                    key={String(index)}
+                                    value={ingredient}
+                                    onClick={() => handleRemoveIngredient(ingredient)}
+                                />
+                            ))
+                        }
+                        <FoodItem 
+                            className="new"
+                            $isNew  
+                            placeholder="Novo ingrediente" 
+                            onChange={e => setNewIngredient(e.target.value)}
+                            value={newIngredient}
+                            onClick={handleAddIngredient}
+                        />
+                    </div>
+                </Section>
+
+                <div id="value">
+                    <h2>Preço</h2>
+                </div>
 
                 <Input 
                     id="price"
-                    title="Preço"
                     placeholder="Adicione o valor"
                     onChange={e => setPrice(e.target.value)}
                 />
@@ -145,13 +150,18 @@ export function Add () {
                     placeholder="Descreva o prato"
                     onChange={e => setDescription(e.target.value)}
                 />                
-                  
-                <Button  
-                    id="save"
-                    title="Salvar alterações"
-                    onClick={handleNewFood}
-                    className="custom-button" 
-                />                
+                <div id="buttons">
+                    <button id="delete">
+                        Excluir prato
+                    </button>
+
+                    <Button  
+                        id="save"
+                        title="Salvar alterações"
+                        onClick={handleNewFood}
+                        className="custom-button" 
+                    />                
+                </div>
             </Content> 
 
             <Footer id="footer"/>

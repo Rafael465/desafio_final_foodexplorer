@@ -2,7 +2,6 @@ import { Container, Form, Menu, Content  } from "./styles";
 
 import { api } from "../../services/api";
 
-
 import { Header } from "../../components/Header";
 import { Section } from "../../components/Section";
 import { Food } from "../../components/Food";
@@ -64,6 +63,7 @@ export function Home() {
                     {
                         foods.map(food => (
                             <Food
+                                id="food"
                                 key={String(food.id)}
                                 data={food}
                                 onClick={() => handleDetails(food.id)}                                
