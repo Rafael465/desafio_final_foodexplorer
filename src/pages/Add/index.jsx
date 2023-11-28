@@ -113,7 +113,7 @@ export function Add () {
                 
                 <div id="type">
                     <h2>Categoria</h2>
-                    <select>
+                    <select onChange={e => setType(e.target.value)}>
                         <option value="none">Escolha a categoria</option>
                         <option value="food">Comida</option>
                         <option value="drink">Bebida</option>

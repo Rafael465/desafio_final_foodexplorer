@@ -13,7 +13,6 @@ export const Container = styled.button`
     border-radius: 0.8rem;
     
     padding: 2.4rem;
-    margin-right: 24px;
     
 
     img {
@@ -24,7 +23,7 @@ export const Container = styled.button`
         display: flex;
         align-items: center;
 
-        margin: 12px 0;
+        margin: 1.2rem 0;
         
         > h1 {
             flex: 1;        
@@ -46,7 +45,7 @@ export const Container = styled.button`
 
     #amount {
         display: flex;
-        gap: 14px;
+        gap: 1.4rem;
 
         margin-bottom: 16px;
     }

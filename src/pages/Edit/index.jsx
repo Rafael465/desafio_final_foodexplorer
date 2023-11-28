@@ -122,6 +122,8 @@ export function Edit () {
                                     onClick={() => handleRemoveIngredient(ingredient)}
                                 />
                             ))
+
+                            
                         }
                         <FoodItem 
                             className="new"

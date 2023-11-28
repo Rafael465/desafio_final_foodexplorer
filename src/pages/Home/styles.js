@@ -6,23 +6,22 @@ export const Container = styled.div`
     height: 100vh;
 
     display: grid;
-    grid-template-rows: 105px auto;
+    grid-template-rows: 10.5rem auto;
     grid-template-areas: 
     "header"
-    "content";    
+    "content";
 `;
 
 export const Form = styled.form`
     width: 100%;
-    max-width: 400px;
+    max-width: 40rem;
     
     display: flex;
     margin: 0 auto;
 
     margin-bottom: 62px;
-
     #top {
-        height: 120px;
+        height: 12rem;
         
         margin: 0 auto;
         margin-top: 60px;
@@ -63,44 +62,47 @@ export const Form = styled.form`
     }
 `;
 
-export const Menu = styled.ul`
-
-    h1 {
-        font-size: 18px;
-        margin-bottom: 24px;
-    }
-
-    .card {
-        margin-left: 24px;
-        margin-bottom: 24px;
-    }
-`;
-
 export const Content = styled.form`
     width: 100%;
-    width: 600px;
+    width: 60rem;
 
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 
     margin: 0 auto;
-    background-color: pink;
+    margin-bottom: 24px;
+
+    background-color: green;
+    padding: 0 1.2rem;    
     
+    .carousel {
+        cursor: grab;
+        overflow: hidden; 
+        background-color: red;
+        width: 32rem;
+    }  
+
     .inner {
         display: flex;
         background-color: blue;
-        width: 900px;
-    }
+        width: 100%;
 
+        gap: 16px;
+    }
+    
     .item {
         pointer-events: none;
+        
     }
+    
+    > h2 {
+        width: 100%;
 
-    .carousel {
-        cursor: grab;
-        overflow: hidden;        
-    }    
+        font-size: 18px;
+        margin-top: 24px;
+        margin-bottom: 24px;        
+    }
 `;
 

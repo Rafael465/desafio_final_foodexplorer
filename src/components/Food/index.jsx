@@ -9,7 +9,6 @@ export function Food({ data, ...rest }) {
     return (
         <Container {...rest}>
             <img src="/src/assets/Mask group-3.png" alt="prato de salada" />
-
             <div id='foodName'>
                 <h1>{data.title}</h1>
                 <MdKeyboardArrowRight id="arrow"/>

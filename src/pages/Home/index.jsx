@@ -1,4 +1,4 @@
-import { Container, Form, Menu, Content  } from "./styles";
+import { Container, Form, Content  } from "./styles";
 
 import { motion } from "framer-motion";
 
@@ -13,24 +13,33 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export function Home() {
-    const carousel = useRef();
-    const [width, setWidth] = useState(0);
-
-    useEffect(() => {
-        setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-    }, []);
-
+    const carouselDesserts = useRef();
+    const carouselDrinks = useRef();
+    const carouselDishes = useRef();
+    const [widthDesserts, setWidthDesserts] = useState(0);
+    const [widthDrinks, setWidthDrinks] = useState(0);
+    const [widthDishes, setWidthDishes] = useState(0);
 
     const [search, setSearch] = useState("");
     const [ingredientSelected, setIngredientSelected] = useState([]);
     const [foods, setFoods] = useState([]);
+
+    useEffect(() => {
+        setWidthDesserts(carouselDesserts.current?.scrollWidth - carouselDesserts.current?.offsetWidth);
+        setWidthDrinks(carouselDrinks.current?.scrollWidth - carouselDrinks.current?.offsetWidth);
+        setWidthDishes(carouselDishes.current?.scrollWidth - carouselDishes.current?.offsetWidth);
+    }, []); 
+    
+    
+    const desserts = foods.filter(food => food.type === 'dessert');
+    const drinks = foods.filter(food => food.type === 'drink');
+    const dishes = foods.filter(food => food.type === 'food');
 
     const navigate = useNavigate();
 
     function handleDetails(id){
         navigate(`/details/${id}`);
     }
-
 
     useEffect(() => {
         async function fetchFoods() {
@@ -61,25 +70,72 @@ export function Home() {
             </Form>
 
             <Content>
-                <motion.div ref={carousel} className="carousel" whileTap={{ cursor: "grabbing"}}>
-                    <motion.div 
+
+                <h2>Refeições</h2>
+
+                <motion.div ref={carouselDishes} className="carousel" whileTap={{ cursor: "grabbing"}}>
+                    <motion.div
                         className="inner"
                         drag="x"
-                        dragConstraints={{ left: -width, right: 0}}
+                        dragConstraints={{ left: -widthDishes, right: 0}}
                     >
 
                         {
-                            foods.map(food => (
+                            dishes.map(dishes => (
                                 <Food className="item"
-                                    key={String(food.id)}
-                                    data={food}
-                                    onClick={() => handleDetails(food.id)}                                
+                                    key={String(dishes.id)}
+                                    data={dishes}
+                                    onClick={() => handleDetails(dishes.id)}                                
                                 />                       
                             ))
                         }
 
-                    </motion.div>
-                </motion.div>                        
+                    </motion.div>                    
+                </motion.div>
+
+                <h2>Sobremesas</h2>
+
+                <motion.div ref={carouselDesserts} className="carousel" whileTap={{ cursor: "grabbing"}}>
+                    <motion.div 
+                        className="inner"
+                        drag="x"
+                        dragConstraints={{ left: -widthDesserts, right: 0}}
+                    >
+
+                        {
+                            desserts.map(desserts => (
+                                <Food className="item"
+                                    key={String(desserts.id)}
+                                    data={desserts}
+                                    onClick={() => handleDetails(desserts.id)}                                
+                                />                       
+                            ))
+                        }
+                    </motion.div>                    
+                </motion.div>
+
+                <h2>Bebidas</h2>
+
+                <motion.div ref={carouselDrinks} className="carousel" whileTap={{ cursor: "grabbing"}}>
+                    <motion.div 
+                        className="inner"
+                        drag="x"
+                        dragConstraints={{ left: -widthDrinks, right: 0}}
+                    >
+
+                        {
+                            drinks.map(drinks => (
+                                <Food className="item"
+                                    key={String(drinks.id)}
+                                    data={drinks}
+                                    onClick={() => handleDetails(drinks.id)}                                
+                                />                       
+                            ))
+                        }
+
+                    </motion.div>                    
+                </motion.div>
+                                    
             </Content>
 
             <Footer id="footer"/>
