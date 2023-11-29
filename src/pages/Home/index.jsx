@@ -59,8 +59,7 @@ export function Home() {
 
     return (
         
-        <Container>
-            
+        <Container>            
 
             <Header/>
             
@@ -81,20 +80,12 @@ export function Home() {
 
                     <h2>Refeições</h2>
                     
-                    <motion.div 
-                        ref={carouselDishes} 
-                        className="carousel" 
-                        whileTap={{ cursor: "grabbing"}}
-                    >
-                        
+                    <motion.div ref={carouselDishes} className="carousel" whileTap={{ cursor: "grabbing"}}>                        
                         <motion.div
                             className="inner"
                             drag="x"
                             dragConstraints={{ right: 0, left: -widthDishes}}
-
-
                         >
-
                             {dishes.map(dishes => (
                                 <motion.div className="item" key={String(dishes.id)}>
                                     <Food 
@@ -104,7 +95,6 @@ export function Home() {
                                 </motion.div>
                                 ))
                             }
-
                         </motion.div>                    
                     </motion.div>
 
@@ -116,11 +106,10 @@ export function Home() {
                             drag="x"
                             dragConstraints={{ right: 0, left: -widthDesserts}}
                         >
-
                             {desserts.map(desserts => (                                            
                                     <motion.div className="item" key={String(desserts.id)}>
                                         <Food 
-                                            className="item"
+                                            className="inside"
                                             data={desserts}
                                         />
                                     </motion.div>                     
@@ -137,18 +126,16 @@ export function Home() {
                             drag="x"
                             dragConstraints={{ right: 0, left: -widthDrinks}}
                         >
-
                             {
                                 drinks.map(drinks => (
                                     <motion.div className="item" key={String(drinks.id)}>
                                         <Food 
-                                            className="item"                                            
+                                            className="inside"                                            
                                             data={drinks}
                                         />
                                     </motion.div>                       
                                 ))
                             }
-
                         </motion.div>                    
                     </motion.div>
                 </div>

@@ -4,22 +4,20 @@ export const Container = styled.div`
     width: 21rem;
     height: 29rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     border: none;
     border-radius: 0.8rem;
     
-    padding: 2.4rem;
     
     background-color: ${({ theme }) => theme.COLORS.DARK_200};
 
     #heart {
         display: flex;
         justify-content: flex-end;
-        width: 100%;
+        
+
+        padding-top: 10px;
+        padding-right: 10px;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
@@ -28,54 +26,65 @@ export const Container = styled.div`
         }
     }
 
-    img {
-        width: 8.8rem;
-    }
+    #content {
+        width: 100%;
 
-    #foodName {
         display: flex;
+        flex-direction: column;
         align-items: center;
 
-        margin: 1.2rem 0;
-        > h1 {
-            flex: 1;        
-            text-align: left;
-            
+        img {
+            width: 8.8rem;
+        }
+    
+        #foodName {
+            display: flex;
+            align-items: center;
+    
+            margin: 1.2rem 0;
+            > h1 {
+                flex: 1;        
+                text-align: left;
+                
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 500;
+                
+                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            }
+    
+            >svg {
+                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            }
+        }
+    
+        h2 {
+            margin-bottom: 12px;
+            color: ${({ theme }) => theme.COLORS.CAKE_200};
+        }
+    
+        #amount {
+            display: flex;
+            align-items: center;
+            gap: 1.4rem;
+    
+            margin-bottom: 16px;
+    
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        }
+    
+        button {
             font-size: 1.4rem;
-            line-height: 2.4rem;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            
-            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    
+            height: 3.2rem;
+            width: 16rem;
+    
+    
+            border: none;
+            border-radius: 0.8rem;
+    
+            background-color: red;
         }
-
-        >svg {
-            color: ${({ theme }) => theme.COLORS.LIGHT_300};
-        }
-    }
-
-    h2 {
-        margin-bottom: 12px;
-        color: ${({ theme }) => theme.COLORS.CAKE_200};
-    }
-
-    #amount {
-        display: flex;
-        align-items: center;
-        gap: 1.4rem;
-
-        margin-bottom: 16px;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_300};
-    }
-
-    button {
-        font-size: 1.4rem;
-        height: 32px;
-
-        border: none;
-        border-radius: 0.8rem;
-
-        background-color: red;
     }
 `;

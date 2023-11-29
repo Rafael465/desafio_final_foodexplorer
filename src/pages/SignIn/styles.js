@@ -112,11 +112,6 @@ export const Content = styled.div`
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
 
-    Button {
-        
-    }
-
-
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 
         max-width: 50rem;
