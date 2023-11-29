@@ -26,7 +26,7 @@ export function Food({ data, ...rest }) {
                 <FiPlus />
             </div>
 
-            <Button title="incluir"/>
+            <button title="include">Include</button>
 
             {/* 
             

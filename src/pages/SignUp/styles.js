@@ -76,6 +76,7 @@ export const Form = styled.form`
 export const Content = styled.div`
 
     width: 100%;
+    max-width: 44rem;
     
     display: flex;
     align-items: center;
@@ -109,7 +110,7 @@ export const Content = styled.div`
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 
-        width: 476px;
+        max-width: 50rem;
 
         padding: 64px;
         border-radius: 16px;

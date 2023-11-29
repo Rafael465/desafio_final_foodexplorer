@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.button`
+export const Container = styled.div`
     width: 21rem;
     height: 29rem;
 
@@ -67,5 +67,15 @@ export const Container = styled.button`
         margin-bottom: 16px;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_300};
+    }
+
+    button {
+        font-size: 1.4rem;
+        height: 32px;
+
+        border: none;
+        border-radius: 0.8rem;
+
+        background-color: red;
     }
 `;

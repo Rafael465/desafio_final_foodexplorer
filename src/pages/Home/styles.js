@@ -10,11 +10,6 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
-
-
-
-
-
 `;
 
 export const Form = styled.form`
@@ -30,6 +25,7 @@ export const Form = styled.form`
         
         margin: 0 auto;
         margin-top: 60px;
+        padding-right: 10px;
 
         display: flex;
         align-items: center;
@@ -62,6 +58,26 @@ export const Form = styled.form`
                 font-weight: 400;
                 font-size: 1.0rem;
                 line-height: 140%;
+            }
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.ME}) {
+        max-width: 32rem;
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+        max-width: 100%;
+
+        #top {
+            >div {
+                >h1 {
+                    font-size: 1.8rem;
+                }
+
+                >p {
+                    font-size: 1.2rem;
+                }
             }
         }
     }
@@ -104,4 +120,21 @@ export const Content = styled.form`
     .carousel {
         cursor: grab;
     }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
+        .app {
+            max-width: 32rem;
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.ME}) {
+        .app {
+            max-width: 37rem;
+        }
+    }
+    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
+        .app {
+            max-width: 75rem;
+        }
+    }   
 `;

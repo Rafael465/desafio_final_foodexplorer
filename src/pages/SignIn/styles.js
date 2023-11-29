@@ -76,13 +76,12 @@ export const Form = styled.form`
 export const Content = styled.div`
 
     width: 100%;
+    max-width: 45rem;
     
     display: flex;
     align-items: center;
     flex-direction: column;
     
-    padding: 0 32px;
-
     header {
         > h1 {
             display: none;
@@ -90,6 +89,14 @@ export const Content = styled.div`
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             font-size: 3.2rem;
+        }
+    }
+
+    #in {
+        width: 100%;
+
+        input {
+            height: 4.8rem;
         }
     }
    
@@ -102,14 +109,18 @@ export const Content = styled.div`
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
         font-size: 1.4rem;
-        
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
+    }
+
+    Button {
+        
     }
 
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 
-        width: 476px;
+        max-width: 50rem;
+        
 
         padding: 64px;
         border-radius: 16px;

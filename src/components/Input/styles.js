@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    max-width: 60.6rem;
+    
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -14,7 +14,6 @@ export const Container = styled.div`
         margin-top: 8px;
         margin-bottom: 32px;
 
-        padding: 1.4rem 1.2rem;
 
         border: 0;
         border-radius: 0.8rem;
