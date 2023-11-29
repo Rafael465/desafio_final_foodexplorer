@@ -30,27 +30,27 @@ export function Home() {
     const dishes = foods.filter(food => food.type === 'food');
 
     function handleNextDish() {
-        setCurrentDish((prevDish) => (prevDish +1) % totalItems );
+        setCurrentDish((prevDish) => (prevDish +1) % dishes.length );
     }
 
     function handlePrevDish() {
-        setCurrentDish((prevDish) => (prevDish === 0 ? totalItems -1 : prevDish -1));
+        setCurrentDish((prevDish) => (prevDish === 0 ? dishes.length -1 : prevDish -1));
     }
 
     function handleNextDessert() {
-        setCurrentDessert((prevDessert) => (prevDessert +1) % totalItems );
+        setCurrentDessert((prevDessert) => (prevDessert +1) % desserts.length );
     }
 
     function handlePrevDessert() {
-        setCurrentDessert((prevDessert) => (prevDessert === 0 ? totalItems -1 : prevDessert -1));
+        setCurrentDessert((prevDessert) => (prevDessert === 0 ? desserts.length -1 : prevDessert -1));
     }
 
     function handleNextDrink() {
-        setCurrentDrink((prevDrink) => (prevDrink +1) % totalItems );
+        setCurrentDrink((prevDrink) => (prevDrink +1) % drinks.length );
     }
 
     function handlePrevDrink() {
-        setCurrentDrink((prevDrink) => (prevDrink === 0 ? totalItems -1 : prevDrink -1));
+        setCurrentDrink((prevDrink) => (prevDrink === 0 ? drinks.length -1 : prevDrink -1));
     }
 
     const navigate = useNavigate();
@@ -92,14 +92,13 @@ export function Home() {
                     <h2>Refeições</h2>
                                                             
                     <div className="test" ref={carouselDishes}>
-                        {[0, 1, 2].map((offset) => {
-                            const index = (currentDish + offset) % totalItems;
+                        {[currentDish, (currentDish + 1) % dishes.length, (currentDish + 2) % dishes.length].map((index) => {
                             const dish = dishes[index];
                             if (dish) {
                                 return <Food key={String(dish.id)} data={dish} />;
                               }
                 
-                              return null; // or a placeholder element if needed
+                              return null;
                         })}
                     </div>
                     <div id="arrows">
@@ -118,14 +117,13 @@ export function Home() {
                     <h2>Sobremesas</h2>
                                                             
                     <div className="test" ref={carouselDesserts}>
-                        {[0, 1, 2].map((offset) => {
-                            const index = (currentDessert + offset) % totalItems;
+                        {[currentDessert, (currentDessert + 1) % desserts.length, (currentDessert + 2) % desserts.length].map((index) => {
                             const dessert = desserts[index];
                             if (dessert) {
                                 return <Food key={String(dessert.id)} data={dessert} />;
                               }
                 
-                              return null; // or a placeholder element if needed
+                              return null;
                         })}
                     </div>
                     <div id="arrows">
@@ -144,8 +142,7 @@ export function Home() {
                     <h2>Bebidas</h2>
                                                             
                     <div className="test" ref={carouselDrinks}>
-                        {[0, 1, 2].map((offset) => {
-                            const index = (currentDrink + offset) % totalItems;
+                        {[currentDrink, (currentDrink + 1) % drinks.length, (currentDrink + 2) % drinks.length].map((index) => {
                             const drink = drinks[index];
                             if (drink) {
                                 return <Food key={String(drink.id)} data={drink} />;
