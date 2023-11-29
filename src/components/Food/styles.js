@@ -9,7 +9,7 @@ export const Container = styled.div`
     border-radius: 0.8rem;
     
     
-    background-color: ${({ theme }) => theme.COLORS.DARK_200};
+    background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
     #heart {
         display: flex;
