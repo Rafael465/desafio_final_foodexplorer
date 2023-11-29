@@ -3,11 +3,15 @@ import { Ingredient } from '../Ingredient';
 import { Button } from '../../components/Button';
 
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { FiPlus, FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus, FiHeart } from "react-icons/fi";
 
 export function Food({ data, ...rest }) {
     return (
         <Container {...rest}>
+            <div id='heart'>
+                <FiHeart />
+            </div>
+
             <img src="/src/assets/Mask group-3.png" alt="prato de salada" />
             <div id='foodName'>
                 <h1>{data.title}</h1>

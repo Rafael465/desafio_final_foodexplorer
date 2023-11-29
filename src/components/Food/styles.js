@@ -14,6 +14,19 @@ export const Container = styled.button`
     
     padding: 2.4rem;
     
+    background-color: ${({ theme }) => theme.COLORS.DARK_200};
+
+    #heart {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+        >svg {
+            font-size: 24px;
+        }
+    }
 
     img {
         width: 8.8rem;
@@ -24,7 +37,6 @@ export const Container = styled.button`
         align-items: center;
 
         margin: 1.2rem 0;
-        
         > h1 {
             flex: 1;        
             text-align: left;
@@ -34,7 +46,11 @@ export const Container = styled.button`
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             
-            color: ${({ theme }) => theme.COLORS.WHITE};
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        }
+
+        >svg {
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
         }
     }
 
@@ -45,8 +61,11 @@ export const Container = styled.button`
 
     #amount {
         display: flex;
+        align-items: center;
         gap: 1.4rem;
 
         margin-bottom: 16px;
+
+        color: ${({ theme }) => theme.COLORS.LIGHT_300};
     }
 `;
