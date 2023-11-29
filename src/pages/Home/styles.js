@@ -108,7 +108,29 @@ export const Content = styled.form`
 
     .test {
         display: flex;
+        transition: transform 0.5s ease-in-out;
         gap: 20px;
+
+    }
+
+    #arrows {
+        display: flex;
+
+        gap: 50px;
+
+        margin-top: 10px;
+        
+
+    }
+
+    .left {
+       font-size: 24px;
+       cursor: pointer;
+    }
+
+    .right {
+       font-size: 24px;
+       cursor: pointer;
     }
 
     .inner {    

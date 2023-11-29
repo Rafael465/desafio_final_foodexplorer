@@ -14,9 +14,8 @@ import { useNavigate } from "react-router-dom";
 import carousel from "carousel";
 
 export function Home() {
-    const carouselDesserts = useRef();
-    const carouselDrinks = useRef();
-    const carouselDishes = useRef();
+    
+    
     const [widthDesserts, setWidthDesserts] = useState(0);
     const [widthDrinks, setWidthDrinks] = useState(0);
     const [widthDishes, setWidthDishes] = useState(0);

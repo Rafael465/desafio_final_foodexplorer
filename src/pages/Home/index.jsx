@@ -10,21 +10,47 @@ import { useNavigate } from "react-router-dom";
 
 export function Home() {
 
-
+    const carouselDishes = useRef();
+    const carouselDesserts = useRef();
+    const carouselDrinks = useRef();
+    
     const [search, setSearch] = useState("");
     const [ingredientSelected, setIngredientSelected] = useState([]);
     const [foods, setFoods] = useState([]);
 
-    
-    const [currentPage, setCurrentPage] = useState(0);
-    const itemsPerPage = 4;
+    const itemsPerPage = 3;
+    const totalItems = foods.length;
 
-    function handleNextPage() {
-        setCurrentPage(currentPage +1);
+    const [currentDish, setCurrentDish] = useState(0);
+    const [currentDessert, setCurrentDessert] = useState(0);
+    const [currentDrink, setCurrentDrink] = useState(0);
+
+    const desserts = foods.filter(food => food.type === 'dessert');
+    const drinks = foods.filter(food => food.type === 'drink');
+    const dishes = foods.filter(food => food.type === 'food');
+
+    function handleNextDish() {
+        setCurrentDish((prevDish) => (prevDish +1) % totalItems );
     }
 
-    function handlePrevPage() {
-        setCurrentPage(currentPage -1);
+    function handlePrevDish() {
+        setCurrentDish((prevDish) => (prevDish === 0 ? totalItems -1 : prevDish -1));
+    }
+
+    function handleNextDessert() {
+        setCurrentDessert((prevDessert) => (prevDessert +1) % totalItems );
+    }
+
+    function handlePrevDessert() {
+        setCurrentDessert((prevDessert) => (prevDessert === 0 ? totalItems -1 : prevDessert -1));
+    }
+
+    function handleNextDrink() {
+        setCurrentDrink((prevDrink) => (prevDrink +1) % totalItems );
+    }
+
+    function handlePrevDrink() {
+        setCurrentDrink((prevDrink) => (prevDrink === 0 ? totalItems -1 : prevDrink -1));
     }
 
     const navigate = useNavigate();
@@ -65,21 +91,81 @@ export function Home() {
                 <div className="app">
                     <h2>Refeições</h2>
                                                             
-                    <div className="test">
-                        {foods.slice(currentPage * itemsPerPage, (currentPage +1) * itemsPerPage).map((food) => (
-                            <Food key={String(food.id)} data={food} />
-                        ))}
+                    <div className="test" ref={carouselDishes}>
+                        {[0, 1, 2].map((offset) => {
+                            const index = (currentDish + offset) % totalItems;
+                            const dish = dishes[index];
+                            if (dish) {
+                                return <Food key={String(dish.id)} data={dish} />;
+                              }
+                
+                              return null; // or a placeholder element if needed
+                        })}
                     </div>
-                    {currentPage > 0 && (
-                        <div className="arrow arrow-left" onClick={handlePrevPage}>
-                            &#9665;
-                        </div>
-                    )}
-                    {foods.length > (currentPage +1) * itemsPerPage && (
-                        <div className="arrow arrow-right" onClick={handleNextPage}>
-                            &#9655;
-                        </div>
-                    )}
+                    <div id="arrows">
+                        {totalItems > itemsPerPage && (
+                            <>
+                                <div className="left" onClick={handlePrevDish}>
+                                    &#9665;
+                                </div>                    
+                                <div className="right" onClick={handleNextDish}>
+                                    &#9655;
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    <h2>Sobremesas</h2>
+                                                            
+                    <div className="test" ref={carouselDesserts}>
+                        {[0, 1, 2].map((offset) => {
+                            const index = (currentDessert + offset) % totalItems;
+                            const dessert = desserts[index];
+                            if (dessert) {
+                                return <Food key={String(dessert.id)} data={dessert} />;
+                              }
+                
+                              return null; // or a placeholder element if needed
+                        })}
+                    </div>
+                    <div id="arrows">
+                        {totalItems > itemsPerPage && (
+                            <>
+                                <div className="left" onClick={handlePrevDessert}>
+                                    &#9665;
+                                </div>                    
+                                <div className="right" onClick={handleNextDessert}>
+                                    &#9655;
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    <h2>Bebidas</h2>
+                                                            
+                    <div className="test" ref={carouselDrinks}>
+                        {[0, 1, 2].map((offset) => {
+                            const index = (currentDrink + offset) % totalItems;
+                            const drink = drinks[index];
+                            if (drink) {
+                                return <Food key={String(drink.id)} data={drink} />;
+                              }
+                
+                              return null; // or a placeholder element if needed
+                        })}
+                    </div>
+                    <div id="arrows">
+                        {totalItems > itemsPerPage && (
+                            <>
+                                <div className="left" onClick={handlePrevDrink}>
+                                    &#9665;
+                                </div>                    
+                                <div className="right" onClick={handleNextDrink}>
+                                    &#9655;
+                                </div>
+                            </>
+                        )}
+                    </div>
                 </div>          
             </Content>
 
