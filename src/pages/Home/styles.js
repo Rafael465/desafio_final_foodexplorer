@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
-    height: 100vh;
 
     display: grid;
     grid-template-rows: 10.5rem auto;
@@ -20,6 +19,8 @@ export const Form = styled.form`
     margin: 0 auto;
 
     margin-bottom: 62px;
+
+   
 
     #top {
         height: 12rem;
@@ -86,10 +87,13 @@ export const Form = styled.form`
 
 export const Content = styled.form`       
     width: 100%;
+
     max-width: 70rem;
 
     overflow-x: hidden;
     margin: 0 auto;
+
+    
     .app {
         width: 100%;
         max-width: 70rem;
@@ -101,13 +105,16 @@ export const Content = styled.form`
 
         flex-direction: column;
         margin-bottom: 24px;
+
+        
     }
 
     .test {
         display: flex;
         transition: transform 0.5s ease-in-out;
         gap: 20px;
-        overflow: hidden;
+        overflow-x: hidden;
+        
     }
 
     #arrows {
