@@ -1,6 +1,7 @@
 import { Container } from './styles';
 import { Ingredient } from '../Ingredient';
 
+import { api } from '../../services/api';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FiPlus, FiMinus, FiHeart } from "react-icons/fi";
 import { useState } from 'react';
@@ -26,7 +27,7 @@ export function Food({ data, ...rest }) {
         e.preventDefault();
         alert(`Adicionado ${amount} unidades de ${data.title}`)
     }
-
+    //console.log("Complete Image URL:", `http://localhost:3333/files/${data.image}`);
     return (
         <Container {...rest}>
             <div id='heart'>
@@ -35,7 +36,11 @@ export function Food({ data, ...rest }) {
             </div>
 
             <div id='content'>
-                <img src="/src/assets/Mask group-3.png" alt="prato de salada" />
+                <img 
+                    src={`http://localhost:3333/files/${data.image}`}
+                    alt="prato de salada" 
+                />
+
                 <div id='foodName'>
                     <h1>{data.title}</h1>
                     <MdKeyboardArrowRight id="arrow"/>
