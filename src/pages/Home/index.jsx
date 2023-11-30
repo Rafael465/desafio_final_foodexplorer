@@ -89,7 +89,6 @@ export function Home() {
             <Content>
 
                 <div className="app">
-                    <h2>Refeições</h2>
                                                             
                     <div className="test" ref={carouselDishes}>
                         {[currentDish, (currentDish + 1) % dishes.length, (currentDish + 2) % dishes.length].map((index) => {
@@ -113,8 +112,6 @@ export function Home() {
                             </>
                         )}
                     </div>
-
-                    <h2>Sobremesas</h2>
                                                             
                     <div className="test" ref={carouselDesserts}>
                         {[currentDessert, (currentDessert + 1) % desserts.length, (currentDessert + 2) % desserts.length].map((index) => {
@@ -138,8 +135,6 @@ export function Home() {
                             </>
                         )}
                     </div>
-
-                    <h2>Bebidas</h2>
                                                             
                     <div className="test" ref={carouselDrinks}>
                         {[currentDrink, (currentDrink + 1) % drinks.length, (currentDrink + 2) % drinks.length].map((index) => {
@@ -148,7 +143,7 @@ export function Home() {
                                 return <Food key={String(drink.id)} data={drink} />;
                               }
                 
-                              return null; // or a placeholder element if needed
+                              return null;
                         })}
                     </div>
                     <div id="arrows">
@@ -163,6 +158,7 @@ export function Home() {
                             </>
                         )}
                     </div>
+                    
                 </div>          
             </Content>
 

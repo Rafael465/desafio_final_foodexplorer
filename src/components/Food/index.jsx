@@ -1,6 +1,5 @@
 import { Container } from './styles';
 import { Ingredient } from '../Ingredient';
-import { Button } from '../../components/Button';
 
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FiPlus, FiMinus, FiHeart } from "react-icons/fi";
@@ -16,6 +15,11 @@ export function Food({ data, ...rest }) {
     const handleDecrement = () => {
         setAmount(prevAmount => prevAmount -1);
     };
+
+    const handleButton = (e) => {
+        e.preventDefault();
+        alert(`Adicionado ${amount} unidades de ${data.title}`)
+    }
 
     return (
         <Container {...rest}>
@@ -38,7 +42,7 @@ export function Food({ data, ...rest }) {
                     <FiPlus onClick={handleIncrement}/>
                 </div>
 
-                <button title="include">Include</button>
+                <button id='include' title="include" onClick={handleButton}>Include</button>
 
                 {/* 
                 

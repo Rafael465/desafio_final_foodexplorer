@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
-    width: 100%;
     height: 100vh;
 
     display: grid;
@@ -10,16 +9,18 @@ export const Container = styled.div`
     grid-template-areas: 
     "header"
     "content";
+
+    margin: 0 auto;
 `;
 
 export const Form = styled.form`
-    width: 100%;
     max-width: 27rem;
     
     display: flex;
     margin: 0 auto;
 
     margin-bottom: 62px;
+
     #top {
         height: 12rem;
         
@@ -84,10 +85,14 @@ export const Form = styled.form`
 `;
 
 export const Content = styled.form`       
-    
+    width: 100%;
+    max-width: 70rem;
+
+    overflow-x: hidden;
+    margin: 0 auto;
     .app {
         width: 100%;
-        max-width: 30rem;
+        max-width: 70rem;
         margin: 0 auto;
 
         display: flex;
@@ -96,21 +101,13 @@ export const Content = styled.form`
 
         flex-direction: column;
         margin-bottom: 24px;
-
-        overflow: hidden;
-
-        >h2 {
-            width: 100%;
-            margin-top: 12px;
-            margin-bottom: 12px;
-        }
     }
 
     .test {
         display: flex;
         transition: transform 0.5s ease-in-out;
         gap: 20px;
-
+        overflow: hidden;
     }
 
     #arrows {
@@ -119,8 +116,6 @@ export const Content = styled.form`
         gap: 50px;
 
         margin-top: 10px;
-        
-
     }
 
     .left {
@@ -132,36 +127,4 @@ export const Content = styled.form`
        font-size: 24px;
        cursor: pointer;
     }
-
-    .inner {    
-        display: flex;
-        flex-direction: row;
-
-    }
-    
-    .item {
-        padding: 12px;
-        pointer-events: none;
-    }
-
-    .carousel {
-        cursor: grab;
-    }
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-        .app {
-            max-width: 32rem;
-        }
-    }
-
-    @media (min-width: ${DEVICE_BREAKPOINTS.ME}) {
-        .app {
-            max-width: 37rem;
-        }
-    }
-    @media (min-width: ${DEVICE_BREAKPOINTS.MD}) {
-        .app {
-            max-width: 75rem;
-        }
-    }   
 `;

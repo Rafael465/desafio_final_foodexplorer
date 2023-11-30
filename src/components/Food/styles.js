@@ -3,11 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 21rem;
     height: 29rem;
-
-
+    
     border: none;
     border-radius: 0.8rem;
-    
     
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
@@ -15,7 +13,6 @@ export const Container = styled.div`
         display: flex;
         justify-content: flex-end;
         
-
         padding-top: 10px;
         padding-right: 10px;
 
@@ -27,8 +24,6 @@ export const Container = styled.div`
     }
 
     #content {
-        width: 100%;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -78,8 +73,7 @@ export const Container = styled.div`
             font-size: 1.4rem;
     
             height: 3.2rem;
-            width: 16rem;
-    
+            width: 16rem;    
     
             border: none;
             border-radius: 0.8rem;
