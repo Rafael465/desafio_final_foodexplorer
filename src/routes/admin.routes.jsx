@@ -1,4 +1,3 @@
-
 import { Routes, Route } from 'react-router-dom';
 
 import { Home } from '../pages/Home';
@@ -12,7 +11,7 @@ export function AdminRoutes(){
             <Route path='/' element={<Home />} />
             <Route path='/details/:id' element={<Details />} />
             <Route path='/add' element={<Add />} />
-            <Route path='/edit' element={<Edit />} />
+            <Route path='/edit/:id' element={<Edit />} />
         </Routes>
     )
 }

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, Link, useParams } from "react-router-dom";
 
 import { useAuth } from '../../hooks/auth';
 
@@ -20,18 +20,53 @@ import { api } from "../../services/api";
 
 
 export function Edit () {
+    const { id } = useParams();
+    const navigate = useNavigate();
+
     const [title, setTitle] = useState("");
     const [type, setType] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-
     const [ingredient, setIngredient] = useState([]);
     const [newIngredient, setNewIngredient] = useState("");
+    const [imageFile, setImageFile] = useState(null);
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        async function fetchFoodDetails() {
+            try {
+                const response = await api.get(`/foods/${id}`);
+                const food = response.data;
 
-    function handleChooseImage() {
-        document.getElementById('file').click();
+                setTitle(food.title);
+                setType(food.type);
+                setPrice(food.price);
+                setDescription(food.description);
+                setIngredient(food.ingredient);
+            } catch (error) {
+                console.error("Error fetching food details:", error);
+            }
+        }
+
+        fetchFoodDetails();
+    }, [id]);
+
+    async function handleDeleteFood(id) {
+        const confirmDelete = window.confirm("Voce quer mesmo excluir?");
+        if (confirmDelete) {
+            try {
+                await api.delete(`/foods/${id}`);
+                alert("Prato excluido com sucesso")
+                navigate("/")                
+            } catch (error) {
+                console.error("Error deleting food:", error);
+
+            }
+        }
+    }
+
+    function handleImage(event) {
+        const file = event.target.files[0];
+        setImageFile(file);
     }
 
     function handleAddIngredient() {
@@ -43,9 +78,9 @@ export function Edit () {
         setIngredient(prevState => prevState.filter(ingredient => ingredient !== deleted));
     }
 
-    async function handleNewFood(){ 
-        const formData = new FormData();
-            
+    
+
+    async function handleEditFood(){ 
         if (!title) {
             return alert("Digite o título do prato.")
         }
@@ -54,16 +89,24 @@ export function Edit () {
             return alert("Clique em adicionar para adicionar o ingrediente.")
         }
 
-        await api.post("/foods", {
-            title,
-            type,
-            description,
-            price,
-            ingredient,
-        });
+        try {
+            await api.put(`/foods/${id}`, {
+                title,
+                type,
+                description,
+                price,
+                ingredient,
+            });
 
-        alert("Prato criado com sucesso!");
-        navigate("/");        
+            if (imageFile) {
+                await updateImage({ imageFile, id});
+            }
+
+            alert("Prato criado com sucesso!");
+
+        } catch (error) {
+            console.error("Error updating food:", error);
+        }
     }
 
     return (
@@ -79,11 +122,10 @@ export function Edit () {
                     </Link>
 
                     <h1>Editar Prato</h1>
-                </div>
-                
+                </div>                
                 
                 <div id="image">
-                    <div id="select" onClick={handleChooseImage}>
+                    <div id="select" onClick={handleImage}>
                         <FiUpload />
 
                         <h2>Escolha a imagem</h2>
@@ -103,7 +145,7 @@ export function Edit () {
                 
                 <div id="type">
                     <h2>Categoria</h2>
-                    <select>
+                    <select value={type} onChange={(e) => setType(e.target.value)}>
                         <option value="none">Escolha a categoria</option>
                         <option value="food">Comida</option>
                         <option value="drink">Bebida</option>
@@ -111,37 +153,30 @@ export function Edit () {
                     </select>
                 </div>
             
-                <Section title="Ingredientes">
-                    <div className="tags" >
-                        {
-                            ingredient.map((ingredient, index) => (
-                                <FoodItem 
-                                    className="item"
-                                    key={String(index)}
-                                    value={ingredient}
-                                    onClick={() => handleRemoveIngredient(ingredient)}
-                                />
-                            ))
-
-                            
-                        }
-                        <FoodItem 
-                            className="new"
-                            $isNew  
-                            placeholder="Novo ingrediente" 
-                            onChange={e => setNewIngredient(e.target.value)}
-                            value={newIngredient}
-                            onClick={handleAddIngredient}
-                        />
-                    </div>
-                </Section>
-
-                <div id="value">
-                    <h2>Preço</h2>
+                <div className="tags" >
+                    {
+                        ingredient.map((ingredient, index) => (
+                            <FoodItem 
+                                className="item"
+                                key={String(index)}
+                                value={ingredient}
+                                onClick={() => handleRemoveIngredient(ingredient)}
+                            />
+                        ))                            
+                    }
+                    <FoodItem 
+                        className="new"
+                        $isNew 
+                        placeholder="Novo ingrediente" 
+                        onChange={e => setNewIngredient(e.target.value)}
+                        value={newIngredient}
+                        onClick={handleAddIngredient}
+                    />
                 </div>
 
                 <Input 
                     id="price"
+                    title="Preço"
                     placeholder="Adicione o valor"
                     onChange={e => setPrice(e.target.value)}
                 />
@@ -151,16 +186,17 @@ export function Edit () {
                     title="Descrição"
                     placeholder="Descreva o prato"
                     onChange={e => setDescription(e.target.value)}
-                />                
+                />
+                            
                 <div id="buttons">
-                    <button id="delete">
+                    <button id="delete" onClick={() => handleDeleteFood(id)}>
                         Excluir prato
                     </button>
 
                     <Button  
-                        id="save"
+                        id="update"
                         title="Salvar alterações"
-                        onClick={handleNewFood}
+                        onClick={handleEditFood}
                         className="custom-button" 
                     />                
                 </div>

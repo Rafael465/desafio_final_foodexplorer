@@ -24,8 +24,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
+
     #top {
         width: 100%;
         
@@ -49,11 +48,12 @@ export const Content = styled.div`
   
     #image {
         width: 100%;
+        max-width: 34rem;
+        padding: 8px 14px;
 
         border-radius: 0.8rem;
 
         margin-bottom: 24px;
-        padding: 12px 32px;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background-color: ${({ theme }) => theme.COLORS.DARK_800};
@@ -79,7 +79,12 @@ export const Content = styled.div`
     }
 
     #name {
+        width: 100%;
+        max-width: 34rem;
         margin-bottom: 24px;
+
+        padding: 12px 14px;
+
         background-color: ${({ theme }) => theme.COLORS.DARK_800};
     }
 
@@ -127,7 +132,9 @@ export const Content = styled.div`
 
     #price {
         width: 100%;
-        max-width: 37rem; 
+        max-width: 34rem;
+
+        padding: 12px 14px;
         
         display: flex;
         justify-content: center;
@@ -139,7 +146,9 @@ export const Content = styled.div`
 
     #description {
         width: 100%;
-        max-width: 37rem;        
+        max-width: 34rem;
+
+        padding: 12px 14px;       
         
         display: flex;
         justify-content: center;

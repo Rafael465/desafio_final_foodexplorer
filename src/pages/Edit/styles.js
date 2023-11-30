@@ -24,8 +24,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
+
     #top {
         width: 100%;
         
@@ -49,11 +48,12 @@ export const Content = styled.div`
   
     #image {
         width: 100%;
+        max-width: 34rem;
+        padding: 8px 14px;
 
         border-radius: 0.8rem;
 
         margin-bottom: 24px;
-        padding: 12px 32px;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background-color: ${({ theme }) => theme.COLORS.DARK_800};
@@ -79,8 +79,13 @@ export const Content = styled.div`
     }
 
     #name {
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};
+        width: 100%;
+        max-width: 34rem;
         margin-bottom: 24px;
+
+        padding: 12px 14px;
+
+        background-color: ${({ theme }) => theme.COLORS.DARK_800};
     }
 
     #type {
@@ -89,7 +94,8 @@ export const Content = styled.div`
         margin-bottom: 24px;
 
         h2 {
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            color: ${({ theme }) => theme.COLORS.LIGHT_400};
         }
 
         select {
@@ -105,56 +111,44 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
-    }
+    }  
 
-    Section {
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 37rem;
 
-        h2 {
-            font-size: 1.6rem;
-            
-        }
+        gap: 1rem;
         
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 37rem;
-            
-
-            .new {
-                width: 140px;
-                background-color: transparent;
-                border: 1px dashed;
-                border-color: aqua;
-                border-image-slice: 100;
-            }
-
-            .item {
-                background-color: blue;
-                width: 150px;
-            }
+        .new {
+            width: 150px;
+            background-color: transparent;
+                            
         }
-    }
-
-    #value {
-        margin-top: 2.4rem;
-        width: 100%;
+        .item {
+            width: 150px;
+        }
     }
 
     #price {
         width: 100%;
-        max-width: 37rem; 
-        
-        margin-bottom: 24px;
+        max-width: 34rem;
+
+        padding: 12px 14px;
         
         display: flex;
         justify-content: center;
+        
+        margin-bottom: 24px;        
       
         background-color: ${({ theme }) => theme.COLORS.DARK_800};    
     }
 
     #description {
         width: 100%;
-        max-width: 37rem;        
+        max-width: 34rem;
+
+        padding: 12px 14px;       
         
         display: flex;
         justify-content: center;
@@ -166,18 +160,29 @@ export const Content = styled.div`
 
     #buttons {
         display: flex;
-        align-items: center;
+        justify-content: center;
 
-        background-color: blue;
+        gap: 32px;        
 
         #delete {
-            background-color: green;
+            width: 250px;
+            height: 48px;
+
+            font-size: 14px;
+
+            border: none;
+            border-radius: 5px;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
+            background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
 
-        #save {
+        #update {
+            height: 48px;
             margin-bottom: 50px;
         }
     }
+
 `;
 
 export const Image = styled.div`

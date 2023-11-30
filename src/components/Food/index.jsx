@@ -4,9 +4,11 @@ import { Ingredient } from '../Ingredient';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FiPlus, FiMinus, FiHeart } from "react-icons/fi";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Food({ data, ...rest }) {
     const [amount, setAmount] = useState(0);
+    const navigate = useNavigate();
 
     const handleIncrement = () => {
         setAmount(prevAmount => prevAmount +1);
@@ -15,6 +17,10 @@ export function Food({ data, ...rest }) {
     const handleDecrement = () => {
         setAmount(prevAmount => prevAmount -1);
     };
+
+    const handleDetails = () => {
+        navigate(`/edit/${data.id}`);
+    }
 
     const handleButton = (e) => {
         e.preventDefault();
@@ -25,6 +31,7 @@ export function Food({ data, ...rest }) {
         <Container {...rest}>
             <div id='heart'>
                 <FiHeart />
+                <button onClick={handleDetails}>edit</button>
             </div>
 
             <div id='content'>
@@ -44,17 +51,6 @@ export function Food({ data, ...rest }) {
 
                 <button id='include' title="include" onClick={handleButton}>Include</button>
 
-                {/* 
-                
-                {
-                    data.ingredient &&
-                    <footer>
-                        {
-                            data.ingredient.map( ingredient => <Ingredient key={ingredient.name} title={ingredient.name} />)
-                        }
-                    </footer>
-                }
-                */}
             </div>
 
         </Container>

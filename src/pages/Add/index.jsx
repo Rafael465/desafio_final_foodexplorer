@@ -86,22 +86,19 @@ export function Add () {
                     </Link>
 
                     <h1>Novo Prato</h1>
-                </div>
-                
+                </div>                
                 
                 <div id="image">
-
                     <div id="select">
                         <FiUpload />
                         <h2>Escolha a imagem</h2>
                     </div>
 
                     <Input 
-                        id="image"
+                        id="file"
                         type='file'
                         onChange={handleImage}
                     />
-
                 </div>
 
                 <Input 

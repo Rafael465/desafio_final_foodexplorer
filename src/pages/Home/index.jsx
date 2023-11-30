@@ -29,6 +29,14 @@ export function Home() {
     const drinks = foods.filter(food => food.type === 'drink');
     const dishes = foods.filter(food => food.type === 'food');
 
+    const details = useNavigate();
+
+    function handleDetails(id) {
+        details(`/edit/${id}`);
+    }
+
+
+
     function handleNextDish() {
         setCurrentDish((prevDish) => (prevDish +1) % dishes.length );
     }
@@ -158,7 +166,7 @@ export function Home() {
                             </>
                         )}
                     </div>
-                    
+
                 </div>          
             </Content>
 
