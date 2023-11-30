@@ -74,7 +74,6 @@ export const Content = styled.div`
         }
 
         #file {
-            display: none;
         }        
     }
 
