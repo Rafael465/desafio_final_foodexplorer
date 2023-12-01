@@ -19,7 +19,6 @@ export function Header() {
                 <FiMenu/>                
             </Nav>
 
-
             <div id="top">
                 <img src="/src/assets/polygon.png" alt="blue polygon" />
                 <h1>food explorer</h1> 
@@ -27,8 +26,7 @@ export function Header() {
 
             <button onClick={signOut}>
                     logout
-            </button>
-            
+            </button>            
 
             {
                 //[USER_ROLE.ADMIN].includes(user.role) && 

@@ -113,7 +113,7 @@ export function Edit () {
             alert(`Error updating food: ${error.message}`);
         }
     }
-
+    console.log(ingredient.name);
     return (
         <Container>
 
@@ -165,10 +165,10 @@ export function Edit () {
                             <FoodItem 
                                 className="item"
                                 key={String(index)}
-                                value={ingredient.name}
+                                value={ ingredient.name }
                                 onClick={() => handleRemoveIngredient(ingredient)}
                             />
-                        ))                            
+                        ))                          
                     }
                     <FoodItem 
                         className="new"

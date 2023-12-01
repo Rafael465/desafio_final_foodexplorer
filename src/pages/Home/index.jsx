@@ -35,8 +35,6 @@ export function Home() {
         details(`/edit/${id}`);
     }
 
-
-
     function handleNextDish() {
         setCurrentDish((prevDish) => (prevDish +1) % dishes.length );
     }
