@@ -10,7 +10,7 @@ export const Container = styled.div`
     
     border: none;
     border-radius: 0.8rem;
-    
+
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
 
     #heart {
@@ -38,11 +38,16 @@ export const Container = styled.div`
         padding-top: 10px;
         padding-right: 20px;
 
-        >button { 
-            color: ${({ theme }) => theme.COLORS.LIGHT_300};
-            background-color: transparent;
-
+        button {             
             border: none;
+            
+            background-color: transparent;
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+
+            cursor: pointer;
+            >svg {
+                font-size: 24px;
+            }
         }
         
     }
@@ -55,9 +60,6 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        margin-top: -34px;
-
 
         img {
             width: 8.8rem;
@@ -102,9 +104,7 @@ export const Container = styled.div`
     
         #include {
 
-            .hide {
-                display: none;
-            }
+            
             
             button {
                 font-size: 1.4rem;
@@ -118,6 +118,10 @@ export const Container = styled.div`
                 background-color: red;
             }
         }
+
+        .hidden {
+                display: none;
+            }
         
     }
 `;

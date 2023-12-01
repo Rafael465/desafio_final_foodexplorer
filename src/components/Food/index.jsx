@@ -37,24 +37,16 @@ export function Food({ data, ...rest }) {
         <Container {...rest}>
             
 
-            {                
-                user.role === USER_ROLE.CUSTOMER &&
-                <>
-                    <div id='heart'>
-                        <FaRegHeart />
-                    </div>
-                </>
+            {user.role === USER_ROLE.CUSTOMER && 
+                <div id='heart'>
+                    <FaRegHeart />
+                </div>
             }
 
-            {               
-                user.role === USER_ROLE.ADMIN &&
-                <>
-                    <div id='edit'>
-
+            {user.role === USER_ROLE.ADMIN &&
+                <div id='edit'>
                     <button onClick={handleEdit}><MdEdit /></button>
-                        
-                    </div>                    
-                </>
+                </div>                
             }
 
             <div id='content'>
@@ -76,7 +68,7 @@ export function Food({ data, ...rest }) {
                     <FiPlus onClick={handleIncrement}/>
                 </div>
 
-                <div id='include' className={user.role === USER_ROLE.ADMIN ? 'hide' : ''}>
+                <div id='include' className={user.role === USER_ROLE.ADMIN ? 'hidden' : ''}>
                     <button title="include" onClick={handleButton}>Include</button>
                 </div>
 

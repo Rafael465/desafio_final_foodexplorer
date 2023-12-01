@@ -19,9 +19,7 @@ export const Form = styled.form`
     display: flex;
     margin: 0 auto;
 
-    margin-bottom: 62px;
-
-   
+    margin-bottom: 62px;   
 
     #top {
         height: 12rem;
@@ -105,17 +103,14 @@ export const Content = styled.form`
         justify-content: center;
 
         flex-direction: column;
-        margin-bottom: 24px;
-
-        
+        margin-bottom: 24px;        
     }
 
     .test {
         display: flex;
         transition: transform 0.5s ease-in-out;
         gap: 20px;
-        overflow-x: hidden;
-        
+        overflow-x: hidden;        
     }
 
     #arrows {
@@ -123,7 +118,6 @@ export const Content = styled.form`
 
         gap: 600px;
         margin-top: 10px;
-
     }
 
     .left {
