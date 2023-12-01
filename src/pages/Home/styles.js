@@ -10,7 +10,6 @@ export const Container = styled.div`
     "content";
 
     margin: 0 auto;
-    padding: 0 15px;
 `;
 
 export const Form = styled.form`
@@ -19,7 +18,7 @@ export const Form = styled.form`
     display: flex;
     margin: 0 auto;
 
-    margin-bottom: 62px;   
+    margin-bottom: 62px;
 
     #top {
         height: 12rem;
@@ -87,15 +86,14 @@ export const Form = styled.form`
 export const Content = styled.form`       
     width: 100%;
 
-    max-width: 70rem;
+    max-width: 80rem;
 
     overflow-x: hidden;
     margin: 0 auto;
 
-    
     .app {
         width: 100%;
-        max-width: 70rem;
+        max-width: 80rem;
         margin: 0 auto;
 
         display: flex;
@@ -103,39 +101,85 @@ export const Content = styled.form`
         justify-content: center;
 
         flex-direction: column;
-        margin-bottom: 24px;        
+        margin-bottom: 24px;   
+        
+        >h2 {
+            width: 100%;
+            text-indent: 40px;
+
+            font-size: 1.8rem;
+
+            margin-bottom: 23px;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_300};
+        }
     }
 
     .test {
         display: flex;
         transition: transform 0.5s ease-in-out;
         gap: 20px;
-        overflow-x: hidden;        
+        overflow-x: hidden;    
+        
+        margin-bottom: 23px;
     }
 
     #arrows {
+        width: 100%;
+        max-width: 680px;
         display: flex;
+        justify-content: space-between;
 
-        gap: 600px;
         margin-top: 10px;
+
+        background-color: aqua;
     }
+
+    #arrows::before, #arrows::after {
+        content: "";
+        margin-top: 160px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 40px;
+        z-index: 1;
+        height: 1300px;
+    }
+
+    #arrows::before {          
+        left: 0;
+        background: linear-gradient(to left, transparent, ${({ theme }) => theme.COLORS.DARK_400});
+    }
+
+    #arrows::after {          
+        right: 0;
+        background: linear-gradient(to right, transparent, ${({ theme }) => theme.COLORS.DARK_400});
+    }
+
 
     .left {
         position: relative;
 
-        margin-top: -170px;
+        margin-top: -200px;
         cursor: pointer;
+        
+        z-index: 2;
 
         >svg {
             font-size: 50px;
         }
     }
 
+    .left:hover, .right:hover {
+        color: ${({ theme }) => theme.COLORS.CAKE_200};
+    } 
+
     .right {
         position: relative;
 
-        margin-top: -170px;
+        margin-top: -200px;
         cursor: pointer;
+        z-index: 2;
 
        >svg {
             font-size: 50px;

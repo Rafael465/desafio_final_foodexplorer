@@ -45,12 +45,18 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
             cursor: pointer;
+
             >svg {
                 font-size: 24px;
             }
+
+            &:hover{
+                color: ${({ theme }) => theme.COLORS.LIGHT_700};
+            }
         }
-        
     }
+
+    
 
     #content {
         width: 100%;
