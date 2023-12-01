@@ -19,6 +19,8 @@ export const Form = styled.form`
     align-items: center;
     flex-direction: column;
 
+    padding: 0 8px;
+
     #brand {
         max-width: 31.6rem;
 
@@ -42,7 +44,6 @@ export const Form = styled.form`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-
         #brand {
             width: 100%;
             
@@ -76,13 +77,13 @@ export const Form = styled.form`
 export const Content = styled.div`
 
     width: 100%;
-    max-width: 44rem;
+    max-width: 45rem;
     
     display: flex;
     align-items: center;
     flex-direction: column;
     
-    padding: 0 32px;
+    padding: 0 10px;
 
     header {
         > h1 {
@@ -91,6 +92,15 @@ export const Content = styled.div`
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             font-size: 3.2rem;
+        }
+    }
+
+    #in {
+        width: 100%;
+
+        input {
+            height: 4.8rem;
+            margin-bottom: 32px;
         }
     }
    
@@ -106,7 +116,6 @@ export const Content = styled.div`
         
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
-
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 

@@ -12,11 +12,10 @@ export const Container = styled.div`
     input {
         width: 100%;
         margin-top: 8px;
-        margin-bottom: 32px;
-
 
         border: 0;
         border-radius: 0.8rem;
+        text-indent: 10px;
 
         color: ${({ theme }) => theme.COLORS.LIGHT_400 };
         background-color: ${({ theme }) => theme.COLORS.DARK_900 };
@@ -24,7 +23,7 @@ export const Container = styled.div`
         &::placeholder {
             font-family: 'Roboto', sans-serif;
             font-size: 1.6rem;
-            font-weight: 400;  
+            font-weight: 400;
 
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
         }    

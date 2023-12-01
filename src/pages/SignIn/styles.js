@@ -17,9 +17,11 @@ export const Form = styled.form`
 
     display: flex;
     align-items: center;
-    flex-direction: column;    
+    flex-direction: column;
 
-    #brand {        
+    padding: 0 8px;
+
+    #brand {
         max-width: 31.6rem;
 
         display: flex;
@@ -42,10 +44,9 @@ export const Form = styled.form`
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.SM}) {
-
         #brand {
             width: 100%;
-            
+
             flex-direction: row;            
         }
     }
@@ -81,7 +82,9 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+
+    padding: 0 10px;
+
     header {
         > h1 {
             display: none;
@@ -97,6 +100,7 @@ export const Content = styled.div`
 
         input {
             height: 4.8rem;
+            margin-bottom: 32px;
         }
     }
    
@@ -109,13 +113,13 @@ export const Content = styled.div`
         font-family: 'Poppins', sans-serif;
         font-weight: 500;
         font-size: 1.4rem;
+
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
 
-        max-width: 50rem;
-        
+        max-width: 50rem;        
 
         padding: 64px;
         border-radius: 16px;

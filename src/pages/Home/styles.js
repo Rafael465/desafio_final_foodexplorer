@@ -10,6 +10,7 @@ export const Container = styled.div`
     "content";
 
     margin: 0 auto;
+    padding: 0 15px;
 `;
 
 export const Form = styled.form`
@@ -120,18 +121,30 @@ export const Content = styled.form`
     #arrows {
         display: flex;
 
-        gap: 50px;
-
+        gap: 600px;
         margin-top: 10px;
+
     }
 
     .left {
-       font-size: 24px;
-       cursor: pointer;
+        position: relative;
+
+        margin-top: -170px;
+        cursor: pointer;
+
+        >svg {
+            font-size: 50px;
+        }
     }
 
     .right {
-       font-size: 24px;
-       cursor: pointer;
+        position: relative;
+
+        margin-top: -170px;
+        cursor: pointer;
+
+       >svg {
+            font-size: 50px;
+        }
     }
 `;

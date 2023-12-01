@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
-    height: 100vh;
 
     display: grid;
     grid-template-rows: 105px auto;
@@ -15,11 +13,10 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     width: 100%;
-    max-width: 37rem;
+    max-width: 80rem;
 
     margin: 0 auto;
     margin-top: 11px;
-    padding: 0 0.8rem;
 
     display: flex;
     flex-direction: column;
@@ -49,7 +46,6 @@ export const Content = styled.div`
     #image {
         width: 100%;
         max-width: 34rem;
-        padding: 8px 14px;
 
         border-radius: 0.8rem;
 
@@ -74,18 +70,48 @@ export const Content = styled.div`
         }
 
         #file {
+            display: none;
         }        
     }
 
-    #name {
+
+    #nameDiv {
         width: 100%;
-        max-width: 34rem;
-        margin-bottom: 24px;
+        max-width: 65rem;
 
-        padding: 12px 14px;
-
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};
+        #name {
+            margin-bottom: 24px;
+            background-color: ${({ theme }) => theme.COLORS.DARK_800};
+        }
     }
+    .inputs {
+        background-color: green;
+
+        width: 100%;
+        max-width: 65rem;
+
+        input {
+            height: 48px;
+        }
+
+        
+
+        #price {
+            padding: 0;
+            margin-bottom: 00px;
+        
+            background-color: ${({ theme }) => theme.COLORS.DARK_800}; 
+        }
+
+        #description {
+            padding: 0;
+            margin-bottom: 24px;
+            
+            background-color: ${({ theme }) => theme.COLORS.DARK_800}; 
+        }
+
+    }
+
 
     #type {
         width: 100%;
@@ -129,34 +155,6 @@ export const Content = styled.div`
         }
     }
 
-    #price {
-        width: 100%;
-        max-width: 34rem;
-
-        padding: 12px 14px;
-        
-        display: flex;
-        justify-content: center;
-        
-        margin-bottom: 24px;        
-      
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};    
-    }
-
-    #description {
-        width: 100%;
-        max-width: 34rem;
-
-        padding: 12px 14px;       
-        
-        display: flex;
-        justify-content: center;
-
-        margin-bottom: 24px;
-        
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};        
-    }
-
     #buttons {
         display: flex;
         justify-content: center;
@@ -164,7 +162,7 @@ export const Content = styled.div`
         gap: 32px;        
 
         #delete {
-            width: 250px;
+            width: 200px;
             height: 48px;
 
             font-size: 14px;

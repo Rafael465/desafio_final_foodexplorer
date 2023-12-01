@@ -78,11 +78,18 @@ export function Edit () {
             return;
         }
     
-        if (!ingredient.some(existingIngredient => existingIngredient === newIngredient)) {
+        const exists = ingredient.some(existingIngredient => {
+            if (typeof existingIngredient === 'object' && existingIngredient.name) {
+                return existingIngredient.name === newIngredient;
+            }
+            return existingIngredient === newIngredient;
+        });
+    
+        if (!exists) {
             setIngredient(prevState => [...prevState, newIngredient]);
             setNewIngredient("");
         } else {
-            alert("Ingredient already exists!");
+            alert("O ingrediente já existe.");
         }
     }
 
@@ -96,7 +103,6 @@ export function Edit () {
         }
     
         try {
-            // Ensure existing ingredients are handled correctly
             const formattedIngredients = ingredient.map(item => item.name || item);
     
             const response = await api.put(`/foods/${id}`, {
@@ -114,7 +120,7 @@ export function Edit () {
             alert(`Error updating food: ${error.message}`);
         }
     }
-    console.log(ingredient.name);
+    
     return (
         <Container>
 
@@ -131,24 +137,26 @@ export function Edit () {
                 </div>                
                 
                 <div id="image">
-                    <div id="select">
+                    <label htmlFor="file" id="select">
                         <FiUpload />
                         <h2>Escolha a imagem</h2>
-                    </div>
+                    </label>
                     <Input 
-                        id="image"
+                        id="file"
                         type='file'
                         onChange={handleImage}
                     />
                 </div>
 
-                <Input
-                    value={title}
-                    id="name"
-                    title="Nome"
-                    placeholder="Ex.: Salada Ceasar"
-                    onChange={e => setTitle(e.target.value)}
-                />
+                <div id="nameDiv">
+                    <Input
+                        id="name"
+                        value={title}
+                        title="Nome"
+                        placeholder="Ex.: Salada Ceasar"
+                        onChange={e => setTitle(e.target.value)}
+                    />
+                </div>
                 
                 <div id="type">
                     <h2>Categoria</h2>
@@ -180,22 +188,26 @@ export function Edit () {
                         onClick={handleAddIngredient}
                     />
                 </div>
-
-                <Input
-                    value={price}
-                    id="price"
-                    title="Preço"
-                    placeholder="Adicione o valor"
-                    onChange={e => setPrice(e.target.value)}
-                />
+                
+                <dir className="inputs">
+                    <Input
+                        id="price"
+                        value={price}
+                        title="Preço"
+                        placeholder="Adicione o valor"
+                        onChange={e => setPrice(e.target.value)}
+                    />
+                </dir>
             
-                <Input
-                    value={description}
-                    id="description"
-                    title="Descrição"
-                    placeholder="Descreva o prato"
-                    onChange={e => setDescription(e.target.value)}
-                />
+                <div className="inputs">
+                    <Input
+                        value={description}
+                        id="description"
+                        title="Descrição"
+                        placeholder="Descreva o prato"
+                        onChange={e => setDescription(e.target.value)}
+                    />
+                </div>
 
                 <div id="buttons">
                     <button id="delete" onClick={() => handleDeleteFood(id)}>

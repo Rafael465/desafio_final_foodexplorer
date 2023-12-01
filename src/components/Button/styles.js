@@ -8,7 +8,7 @@ export const Container = styled.button`
 
     height: 56px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 0.5rem;
 
     &:disabled {
         opacity: 0.5;

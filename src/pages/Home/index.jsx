@@ -2,6 +2,7 @@ import { Container, Form, Content  } from "./styles";
 
 import { api } from "../../services/api";
 
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Header } from "../../components/Header";
 import { Food } from "../../components/Food";
 import { Footer } from "../../components/Footer";
@@ -110,10 +111,10 @@ export function Home() {
                         {totalItems > itemsPerPage && (
                             <>
                                 <div className="left" onClick={handlePrevDish}>
-                                    &#9665;
+                                    <IoIosArrowBack />
                                 </div>                    
                                 <div className="right" onClick={handleNextDish}>
-                                    &#9655;
+                                    <IoIosArrowForward />
                                 </div>
                             </>
                         )}
@@ -133,10 +134,10 @@ export function Home() {
                         {totalItems > itemsPerPage && (
                             <>
                                 <div className="left" onClick={handlePrevDessert}>
-                                    &#9665;
+                                    <IoIosArrowBack />
                                 </div>                    
                                 <div className="right" onClick={handleNextDessert}>
-                                    &#9655;
+                                    <IoIosArrowForward />
                                 </div>
                             </>
                         )}
@@ -156,10 +157,10 @@ export function Home() {
                         {totalItems > itemsPerPage && (
                             <>
                                 <div className="left" onClick={handlePrevDrink}>
-                                    &#9665;
+                                    <IoIosArrowBack />
                                 </div>                    
                                 <div className="right" onClick={handleNextDrink}>
-                                    &#9655;
+                                    <IoIosArrowForward />
                                 </div>
                             </>
                         )}
