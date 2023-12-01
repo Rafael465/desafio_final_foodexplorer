@@ -74,40 +74,41 @@ export function Edit () {
     }
 
     function handleAddIngredient() {
-        setIngredient(prevState => [...prevState, newIngredient]);
-        setNewIngredient("");
+        if (newIngredient.trim() === "") {
+            return;
+        }
+    
+        if (!ingredient.some(existingIngredient => existingIngredient === newIngredient)) {
+            setIngredient(prevState => [...prevState, newIngredient]);
+            setNewIngredient("");
+        } else {
+            alert("Ingredient already exists!");
+        }
     }
 
     function handleRemoveIngredient(deleted) {
         setIngredient(prevState => prevState.filter(ingredient => ingredient !== deleted));
     }    
 
-    async function handleEditFood(){ 
-
+    async function handleEditFood() {
         if (!title) {
-            return alert("Digite o título do prato.")
+            return alert("Digite o título do prato.");
         }
-        
-        if (newIngredient) {
-            return alert("Clique em adicionar para adicionar o ingrediente.")
-        }
-
+    
         try {
+            // Ensure existing ingredients are handled correctly
+            const formattedIngredients = ingredient.map(item => item.name || item);
+    
             const response = await api.put(`/foods/${id}`, {
                 title,
                 type,
                 description,
                 price,
-                ingredient,
+                ingredient: formattedIngredients,
             });
-
-
-            await updateImage({ imageFile : imageFile, id : response.data.id });
-            /*if (imageFile) {
-                await updateImage({ imageFile, id});
-            }*/
+    
+            await updateImage({ imageFile, id: response.data.id });
             alert("Prato atualizado com sucesso!");
-
         } catch (error) {
             console.error("Error updating food:", error);
             alert(`Error updating food: ${error.message}`);
