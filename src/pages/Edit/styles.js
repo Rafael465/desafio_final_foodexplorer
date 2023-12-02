@@ -13,7 +13,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     width: 100%;
-    max-width: 80rem;
+    max-width: 50rem;
+
 
     margin: 0 auto;
     margin-top: 11px;
@@ -21,6 +22,7 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: blue;
 
     #top {
         width: 100%;
@@ -42,30 +44,37 @@ export const Content = styled.div`
             font-size: 32px;
         }
     }
-  
+    
     #image {
         width: 100%;
-        max-width: 34rem;
-
-        border-radius: 0.8rem;
+        max-width: 36rem;        
+        height: 4.8rem;
 
         margin-bottom: 24px;
 
+        border-radius: 0.8rem;
+
         color: ${({ theme }) => theme.COLORS.LIGHT_100};
         background-color: ${({ theme }) => theme.COLORS.DARK_800};
-
         cursor: pointer;
-        
+
         #select {
+            height: 100%;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             gap: 10px;
 
             cursor: pointer;
 
             svg {
-                font-size: 24px;
+                font-size: 2.4rem;
+            }
+
+            >h2 {
+                font-size: 1.4rem;
             }
         }
 
@@ -74,47 +83,22 @@ export const Content = styled.div`
         }        
     }
 
-
-    #nameDiv {
+    .input {
         width: 100%;
-        max-width: 65rem;
+        max-width: 36rem;
 
-        #name {
-            margin-bottom: 24px;
+        margin-bottom: 24px;
+        
+        #name, #price, #description {
+            height: 4.8rem;
+            color: ${({ theme }) => theme.COLORS.LIGHT_500};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
     }
-    .inputs {
-        background-color: green;
 
+    #typeInput {
         width: 100%;
-        max-width: 65rem;
-
-        input {
-            height: 48px;
-        }
-
-        
-
-        #price {
-            padding: 0;
-            margin-bottom: 00px;
-        
-            background-color: ${({ theme }) => theme.COLORS.DARK_800}; 
-        }
-
-        #description {
-            padding: 0;
-            margin-bottom: 24px;
-            
-            background-color: ${({ theme }) => theme.COLORS.DARK_800}; 
-        }
-
-    }
-
-
-    #type {
-        width: 100%;
+        max-width: 36rem;
 
         margin-bottom: 24px;
 
@@ -136,33 +120,40 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_500};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
-    }  
+    }
 
     .tags {
+        width: 100%;
+        max-width: 36rem;        
+        
         display: flex;
         flex-wrap: wrap;
-        max-width: 37rem;
-
-        gap: 1rem;
+        justify-content: space-around;
         
-        .new {
-            width: 150px;
-            background-color: transparent;
-                            
-        }
         .item {
-            width: 150px;
+            width: 100%;
+            max-width: 11.5rem;
+
+        }
+
+        .new {
+            width: 100%;
+            max-width: 11.5rem;
+            background-color: transparent;
         }
     }
 
     #buttons {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
 
-        gap: 32px;        
+        gap: 0.5rem;
+
+        background-color: green;
 
         #delete {
-            width: 200px;
+            width: 100%;
+            max-width: 160px;
             height: 48px;
 
             font-size: 14px;
@@ -175,11 +166,12 @@ export const Content = styled.div`
         }
 
         #update {
+            width: 100%;
+            max-width: 17rem;
             height: 48px;
             margin-bottom: 50px;
         }
     }
-
 `;
 
 export const Image = styled.div`

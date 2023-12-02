@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 export function Header() {
 
-
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
 
@@ -54,7 +53,6 @@ export function Header() {
             <button id="signOut" onClick={signOut}>
                 <PiSignOut />
             </button>
-
 
         </Container>
     )
