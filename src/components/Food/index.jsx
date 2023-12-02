@@ -60,13 +60,19 @@ export function Food({ data, ...rest }) {
                     <MdKeyboardArrowRight id="arrow"/>
                 </div>
 
+                {user.role === USER_ROLE.ADMIN && 
+                    <p>{data.description}</p>
+                }
+                
                 <h2>R$ {data.price}</h2>
 
-                <div id="amount">
-                    <FiMinus onClick={handleDecrement}/>
-                    <h1>{amount}</h1>
-                    <FiPlus onClick={handleIncrement}/>
-                </div>
+                {user.role === USER_ROLE.CUSTOMER && 
+                    <div id="amount">
+                        <FiMinus onClick={handleDecrement}/>
+                        <h1>{amount}</h1>
+                        <FiPlus onClick={handleIncrement}/>
+                    </div>                
+                }
 
                 <div id='include' className={user.role === USER_ROLE.ADMIN ? 'hidden' : ''}>
                     <button title="include" onClick={handleButton}>Include</button>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
     width: 21rem;
@@ -54,9 +55,7 @@ export const Container = styled.div`
                 color: ${({ theme }) => theme.COLORS.LIGHT_700};
             }
         }
-    }
-
-    
+    }    
 
     #content {
         width: 100%;
@@ -67,6 +66,9 @@ export const Container = styled.div`
         justify-content: center;
         align-items: center;
 
+        gap: 12px;
+        padding-bottom: 20px;
+
         img {
             width: 8.8rem;
         }
@@ -74,8 +76,7 @@ export const Container = styled.div`
         #foodName {
             display: flex;
             align-items: center;
-    
-            margin: 1.2rem 0;
+
             > h1 {
                 flex: 1;        
                 text-align: left;
@@ -92,9 +93,12 @@ export const Container = styled.div`
                 color: ${({ theme }) => theme.COLORS.LIGHT_300};
             }
         }
+
+        p {
+            display: none;
+        }
     
         h2 {
-            margin-bottom: 12px;
             color: ${({ theme }) => theme.COLORS.CAKE_200};
         }
     
@@ -108,9 +112,7 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
         }
     
-        #include {
-
-            
+        #include {            
             
             button {
                 font-size: 1.4rem;
@@ -126,8 +128,48 @@ export const Container = styled.div`
         }
 
         .hidden {
-                display: none;
-            }
+            display: none;
+
+            
+        }
         
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        width: 30rem;
+        height: 46rem;
+
+        #content {
+
+            gap: 20px;
+
+            img {
+                width: 17rem;
+            }
+
+            #foodName {
+            
+                > h1 {
+                    font-size: 2.4rem;
+                    
+                    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+                }
+            }
+
+            p {
+                width: 28rem;
+
+                display: flex;
+                justify-content: center;
+
+                font-size: 1.4rem;
+                text-align: center;
+                line-height: 160%;
+            }
+
+            h2 {
+                font-size: 3.2rem;
+            }
+        }
     }
 `;

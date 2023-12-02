@@ -81,6 +81,60 @@ export const Form = styled.form`
             }
         }
     }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        width: 800px;
+        margin-top: 125px;
+
+        #top {
+            height: 26rem;
+            
+            >img {
+                width: 592px;
+                height: 366px;
+            
+                margin-left: -90px;
+                margin-bottom: 110px;
+            }
+
+            >div {
+                >h1 {
+                    font-size: 4rem;
+                }
+
+                >p{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.XL}) {
+        width: 100%;
+        margin-top: 125px;
+
+        #top {
+            height: 26rem;
+            
+            >img {
+                width: 592px;
+                height: 366px;
+            
+                margin-left: -90px;
+                margin-bottom: 110px;
+            }
+
+            >div {
+                >h1 {
+                    font-size: 4rem;
+                }
+
+                >p{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
 `;
 
 export const Content = styled.form`       
@@ -101,7 +155,7 @@ export const Content = styled.form`
         justify-content: center;
 
         flex-direction: column;
-        margin-bottom: 24px;   
+        margin-bottom: 24px;  
         
         >h2 {
             width: 100%;
@@ -183,6 +237,30 @@ export const Content = styled.form`
 
        >svg {
             font-size: 50px;
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        max-width: 100rem;
+
+        .app {
+            max-width: 100rem;
+        }
+
+        .test {
+            gap: 30px;
+        }
+
+        #arrows {
+            max-width: 950px;
+        }
+
+        .left {
+            margin-top: -300px;
+        }
+
+        .right {
+            margin-top: -300px;
         }
     }
 `;
