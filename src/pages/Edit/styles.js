@@ -22,10 +22,10 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blue;
 
     #top {
         width: 100%;
+        max-width: 36rem;
         
         #back {
             display: flex;
@@ -34,8 +34,10 @@ export const Content = styled.div`
         }
 
         svg {
+            font-size: 35px;
+            margin-left: -10px;
+
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
-            font-size: 22px;
         }
 
         > h1 {
@@ -44,113 +46,150 @@ export const Content = styled.div`
             font-size: 32px;
         }
     }
-    
-    #image {
-        width: 100%;
-        max-width: 36rem;        
-        height: 4.8rem;
 
-        margin-bottom: 24px;
-
-        border-radius: 0.8rem;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};
-        cursor: pointer;
-
-        #select {
-            height: 100%;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            gap: 10px;
-
-            cursor: pointer;
-
-            svg {
-                font-size: 2.4rem;
-            }
-
-            >h2 {
-                font-size: 1.4rem;
-            }
-        }
-
-        #file {
-            display: none;
-        }        
-    }
-
-    .input {
+    #divOne {
         width: 100%;
         max-width: 36rem;
 
-        margin-bottom: 24px;
-        
-        #name, #price, #description {
-            height: 4.8rem;
-            color: ${({ theme }) => theme.COLORS.LIGHT_500};
-            background-color: ${({ theme }) => theme.COLORS.DARK_800};
-        }
-    }
-
-    #typeInput {
-        width: 100%;
-        max-width: 36rem;
-
-        margin-bottom: 24px;
-
-        h2 {
-            margin-bottom: 8px;
-            color: ${({ theme }) => theme.COLORS.LIGHT_400};
-        }
-
-        select {
+        #image {
             width: 100%;
-            padding: 1.4rem 1.2rem;
+            max-width: 36rem;        
+            height: 4.8rem;
 
-            border: none;
+            margin-bottom: 24px;
+
             border-radius: 0.8rem;
 
-            cursor: pointer;
-            appearance: none;
-
-            color: ${({ theme }) => theme.COLORS.LIGHT_500};
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            cursor: pointer;
+
+            #select {
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                gap: 10px;
+
+                cursor: pointer;
+
+                svg {
+                    font-size: 2.4rem;
+                }
+
+                >h2 {
+                    font-size: 1.4rem;
+                }
+            }
+
+            #file {
+                display: none;
+            }        
+
+        }
+
+        .input {
+            width: 100%;
+            max-width: 36rem;
+
+            margin-bottom: 24px;
+            
+            #name, #price, #description {
+                height: 4.8rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
+        }
+
+        #typeInput {
+            width: 100%;
+            max-width: 36rem;
+
+            margin-bottom: 24px;
+
+            h2 {
+                margin-bottom: 8px;
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+            }
+
+            select {
+                width: 100%;
+                padding: 1.4rem 1.2rem;
+
+                border: none;
+                border-radius: 0.8rem;
+
+                cursor: pointer;
+                appearance: none;
+
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
         }
     }
 
-    .tags {
+    #divTwo {
         width: 100%;
-        max-width: 36rem;        
+        max-width: 36rem;
         
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        
-        .item {
+        .tags {
             width: 100%;
-            max-width: 11.5rem;
-
+            max-width: 36rem;        
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+            .item {
+                width: 100%;
+                max-width: 11.5rem;
+    
+            }
+    
+            .new {
+                width: 100%;
+                max-width: 11.5rem;
+                background-color: transparent;
+            }
         }
 
-        .new {
+        #price {
             width: 100%;
-            max-width: 11.5rem;
-            background-color: transparent;
+            max-width: 36rem;
+
+            margin-bottom: 24px;
+            
+            #priceInput {
+                height: 4.8rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
         }
+    }
+
+    #description {
+            width: 100%;
+            max-width: 36rem;
+
+            margin-bottom: 24px;
+            
+            #descriptionInput {
+                height: 4.8rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
     }
 
     #buttons {
+        width: 100%;
+        max-width: 36rem;
+
         display: flex;
         justify-content: space-between;
 
         gap: 0.5rem;
-
-        background-color: green;
-
         #delete {
             width: 100%;
             max-width: 160px;
@@ -174,7 +213,7 @@ export const Content = styled.div`
     }
 `;
 
-export const Image = styled.div`
+/*export const Image = styled.div`
     position: relative;
     margin: -124px auto 32px;
 
@@ -211,4 +250,4 @@ export const Image = styled.div`
             color: red;
         }
     }
-`;
+`;*/

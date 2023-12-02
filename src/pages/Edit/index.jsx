@@ -7,7 +7,7 @@ import { useAuth } from '../../hooks/auth';
 import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md";
 import { FiUpload } from "react-icons/fi";
 
-import { Container, Content, Image } from "./styles";
+import { Container, Content } from "./styles";
 
 import { ButtonText } from "../../components/ButtonText";
 import { FoodItem } from "../../components/FoodItem";
@@ -127,7 +127,7 @@ export function Edit () {
             <Header/>   
 
             <Content>
-                <div id="edit">
+                
                     <div id="top">
                         <Link id="back" to="/">
                             <MdKeyboardArrowLeft id="arrow"/>
@@ -137,73 +137,78 @@ export function Edit () {
                         <h1>Editar Prato</h1>
                     </div>                
                     
-                    <div id="image">
-                        <label htmlFor="file" id="select">
-                            <FiUpload />
-                            <h2>Escolha a imagem</h2>
-                        </label>
-                        <Input 
-                            id="file"
-                            type='file'
-                            onChange={handleImage}
-                        />
+                    <div id="divOne">
+                        <div id="image">
+                            <label htmlFor="file" id="select">
+                                <FiUpload />
+                                <h2>Escolha a imagem</h2>
+                            </label>
+                            <Input 
+                                id="file"
+                                type='file'
+                                onChange={handleImage}
+                            />
+                        </div>
+
+                        <div className="input">
+                            <Input
+                                id="name"
+                                value={title}
+                                title="Nome"
+                                placeholder="Ex.: Salada Ceasar"
+                                onChange={e => setTitle(e.target.value)}
+                            />
+                        </div>
+
+                        <div id="typeInput">
+                            <h2>Categoria</h2>
+                            <select value={type} onChange={(e) => setType(e.target.value)}>
+                                <option value="none">Escolha a categoria</option>
+                                <option value="food">Comida</option>
+                                <option value="drink">Bebida</option>
+                                <option value="dessert">Sobremesa</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div className="input">
-                        <Input
-                            id="name"
-                            value={title}
-                            title="Nome"
-                            placeholder="Ex.: Salada Ceasar"
-                            onChange={e => setTitle(e.target.value)}
-                        />
-                    </div>
-                    
-                    <div id="typeInput">
-                        <h2>Categoria</h2>
-                        <select value={type} onChange={(e) => setType(e.target.value)}>
-                            <option value="none">Escolha a categoria</option>
-                            <option value="food">Comida</option>
-                            <option value="drink">Bebida</option>
-                            <option value="dessert">Sobremesa</option>
-                        </select>
-                    </div>
-                
-                    <div className="tags" >
-                        {
-                            ingredient.map((ingredient, index) => (
-                                <FoodItem 
-                                    className="item"
-                                    key={String(index)}
-                                    value={ ingredient.name }
-                                    onClick={() => handleRemoveIngredient(ingredient)}
-                                />
-                            ))                          
-                        }
-                        <FoodItem 
-                            className="new"
-                            $isNew 
-                            placeholder="Novo ingrediente" 
-                            onChange={e => setNewIngredient(e.target.value)}
-                            value={newIngredient}
-                            onClick={handleAddIngredient}
-                        />
-                    </div>
-                    
-                    <div className="input">
-                        <Input
-                            id="price"
-                            value={price}
-                            title="Preço"
-                            placeholder="Adicione o valor"
-                            onChange={e => setPrice(e.target.value)}
-                        />
+                    <div id="divTwo">
+                        <div className="tags" >
+                            {
+                                ingredient.map((ingredient, index) => (
+                                    <FoodItem 
+                                        className="item"
+                                        key={String(index)}
+                                        value={ ingredient.name }
+                                        onClick={() => handleRemoveIngredient(ingredient)}
+                                    />
+                                ))                          
+                            }
+                            <FoodItem 
+                                className="new"
+                                $isNew 
+                                placeholder="Novo ingrediente" 
+                                onChange={e => setNewIngredient(e.target.value)}
+                                value={newIngredient}
+                                onClick={handleAddIngredient}
+                            />
+                        </div>
+                        
+                        <div id="price">
+                            <Input
+                                id="priceInput"
+                                value={price}
+                                title="Preço"
+                                placeholder="Adicione o valor"
+                                onChange={e => setPrice(e.target.value)}
+                            />
+                        </div>
                     </div>
                 
-                    <div className="input">
+                
+                    <div id="description">
                         <Input
+                            id="descriptionInput"
                             value={description}
-                            id="description"
                             title="Descrição"
                             placeholder="Descreva o prato"
                             onChange={e => setDescription(e.target.value)}
@@ -222,7 +227,7 @@ export function Edit () {
                             className="custom-button" 
                         />                
                     </div>
-                </div>
+                
             </Content> 
 
             <Footer id="footer"/>
