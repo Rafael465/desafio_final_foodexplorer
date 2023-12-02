@@ -102,18 +102,22 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.CAKE_200};
         }
     
-        #amount {
-            display: flex;
-            align-items: center;
-            gap: 1.4rem;
-    
-            margin-bottom: 16px;
-    
-            color: ${({ theme }) => theme.COLORS.LIGHT_300};
-        }
-    
-        #include {            
+        #buy {
             
+            #amount {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                justify-content: center;
+                
+                gap: 1.4rem;
+        
+                margin-bottom: 16px;
+
+                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            }           
+                
             button {
                 font-size: 1.4rem;
         
@@ -125,7 +129,7 @@ export const Container = styled.div`
         
                 background-color: red;
             }
-        }
+        }   
 
         .hidden {
             display: none;
@@ -169,6 +173,30 @@ export const Container = styled.div`
 
             h2 {
                 font-size: 3.2rem;
+            }
+
+            #buy {
+
+                display: flex;
+                align-items: center;
+
+                gap: 16px;
+
+                #amount {
+
+                    margin-bottom: 0;
+
+                    h1 {
+                        font-size: 2rem;
+                    }
+                }
+
+                button {
+
+                    width: 9.2rem;
+                    height: 4.8rem;
+                }
+
             }
         }
     }
