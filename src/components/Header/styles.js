@@ -30,7 +30,7 @@ export const Container = styled.div`
         display: none;
     }
 
-    #signout {
+    #signOut {
         display: none;
     }
     
@@ -49,7 +49,7 @@ export const Container = styled.div`
             display: block;
         }
 
-        #signout {
+        #signOut {
 
             display: flex;
             border: none;
@@ -90,31 +90,47 @@ export const Nav = styled.div`
 
 export const Notification = styled.div`
 
-    margin-right: 28px;
-    margin-top: 60px;
+    .receipt {
+        margin-right: 28px;
+        margin-top: 60px;
 
-    svg {
-        font-size: 32px;
-    }
+        #add {
+            cursor: pointer;
+        }
 
-    h2 {
-        display: none;
-    }
-
-    @media (min-width: 1024px) {
-        display: flex;
-        align-items: center;
-
-        gap: 8px;
-        margin: 0;
-        padding: 12px 32px;
-
-        border-radius: 0.8rem;
-
-        background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
-
+        svg {
+            font-size: 32px;
+        }
+    
         h2 {
+            display: none;
+        }
+    }
+
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        
+        .receipt, .add {
+
             display: flex;
+            align-items: center;
+            
+            gap: 8px;
+            margin: 0;
+            padding: 12px 32px;
+            
+            border-radius: 0.8rem;
+
+            background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+
+            cursor: pointer;
+
+            h2 {
+                display: flex;
+            }
+        }
+
+        .add {
+            
         }
     }
 `;

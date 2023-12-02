@@ -7,10 +7,17 @@ import { USER_ROLE } from '../../utils/roles';
 import { PiReceipt, PiSignOut } from "react-icons/pi";
 
 import { Container, Nav, Notification } from "./styles";
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
 
+
     const { signOut, user } = useAuth();
+    const navigate = useNavigate();
+
+    const handleAdd = () => {
+        navigate(`/add`);
+    }
 
     return (
         <Container>
@@ -24,24 +31,29 @@ export function Header() {
                 <h1>food explorer</h1> 
             </div>
 
-            {/*//[USER_ROLE.ADMIN].includes(user.role) && 
-            // por exemplo: {user.role === USER_ROLE.ADMIN && <div className='search'>}*/}    
-            { user.role === USER_ROLE.ADMIN && //se eu colocar essa linha na frenta do codigo dentro de chaves posso separa linhas especificas de quem acessa
-                <div className='search'>   
+            <div className='search'>   
                     <InputSearch />
-                </div>
-            }
+            </div>
+            
 
             <Notification>
-                <PiReceipt />
-                <h2>Pedidos (0)</h2>
+                {user.role === USER_ROLE.CUSTOMER && 
+                    <div className='receipt'>
+                        <PiReceipt />
+                        <h2>Pedidos (0)</h2>
+                    </div>                    
+                }
+
+                {user.role === USER_ROLE.ADMIN &&
+                    <div className='add'>
+                        <h2 onClick={handleAdd}>Novo prato</h2>
+                    </div> 
+                }
             </Notification>            
 
-            {user.role === USER_ROLE.ADMIN && 
-                <button id="signout" onClick={signOut}>
-                    <PiSignOut />
-                </button> 
-            }
+            <button id="signOut" onClick={signOut}>
+                <PiSignOut />
+            </button>
 
 
         </Container>

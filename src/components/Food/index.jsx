@@ -60,9 +60,8 @@ export function Food({ data, ...rest }) {
                     <MdKeyboardArrowRight id="arrow"/>
                 </div>
 
-                {user.role === USER_ROLE.ADMIN && 
-                    <p>{data.description}</p>
-                }
+                
+                <p>{data.description}</p>                
 
                 <h2>R$ {data.price}</h2>
 

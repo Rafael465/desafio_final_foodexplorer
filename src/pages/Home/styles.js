@@ -252,7 +252,7 @@ export const Content = styled.form`
         }
 
         #arrows {
-            max-width: 950px;
+            max-width: 970px;
         }
 
         .left {
