@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
-    width: 100%;
-    height: 100vh;
 
     display: grid;
     grid-template-rows: 105px auto;
@@ -15,11 +14,10 @@ export const Container = styled.div`
 
 export const Content = styled.div`
     width: 100%;
-    max-width: 37rem;
+    max-width: 50rem;
 
     margin: 0 auto;
     margin-top: 11px;
-    padding: 0 0.8rem;
 
     display: flex;
     flex-direction: column;
@@ -27,6 +25,7 @@ export const Content = styled.div`
 
     #top {
         width: 100%;
+        max-width: 36rem;
         
         #back {
             display: flex;
@@ -35,8 +34,10 @@ export const Content = styled.div`
         }
 
         svg {
+            font-size: 35px;
+            margin-left: -10px;
+
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
-            font-size: 22px;
         }
 
         > h1 {
@@ -45,159 +46,320 @@ export const Content = styled.div`
             font-size: 32px;
         }
     }
-  
-    #image {
+
+    #divOne {
         width: 100%;
-        max-width: 34rem;
-        padding: 8px 14px;
+        max-width: 36rem;
 
-        border-radius: 0.8rem;
+        #image {
+            width: 100%;
+            max-width: 36rem;
+            height: 4.8rem;
 
-        margin-bottom: 24px;
-
-        color: ${({ theme }) => theme.COLORS.LIGHT_100};
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};
-
-        cursor: pointer;
-        
-        #select {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-
+            margin-bottom: 24px;
+    
+            border-radius: 0.8rem;
+    
+    
+            color: ${({ theme }) => theme.COLORS.LIGHT_100};
+            background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    
             cursor: pointer;
 
-            svg {
-                font-size: 24px;
+            >h2 {
+                display: none;
+            }
+            
+            #select {
+                height: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                gap: 10px;
+    
+                cursor: pointer;
+    
+                svg {
+                    font-size: 2.4rem;
+                }
+
+                >h2 {
+                    font-size: 1.4rem;
+                }
+            }
+    
+            #file {
+                display: none;
+            }        
+        }
+        
+        #name {
+            width: 100%;
+            max-width: 36rem;
+
+            margin-bottom: 24px;
+    
+            #inputName {
+                height: 4.8rem;
+
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
             }
         }
 
-        #file {
-            display: none;
-        }        
-    }
-
-    #name {
-        width: 100%;
-        max-width: 34rem;
-        margin-bottom: 24px;
-
-        padding: 12px 14px;
-
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};
-    }
-
-    #type {
-        width: 100%;
-
-        margin-bottom: 24px;
-
-        h2 {
-            margin-bottom: 8px;
-            color: ${({ theme }) => theme.COLORS.LIGHT_400};
-        }
-
-        select {
+        #typeInput {
             width: 100%;
-            padding: 1.4rem 1.2rem;
-
-            border: none;
-            border-radius: 0.8rem;
-
-            cursor: pointer;
-            appearance: none;
-
-            color: ${({ theme }) => theme.COLORS.LIGHT_500};
-            background-color: ${({ theme }) => theme.COLORS.DARK_800};
-        }
-    }  
-
-    .tags {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 37rem;
-
-        gap: 1rem;
-        
-        .new {
-            width: 150px;
-            background-color: transparent;
-                            
-        }
-        .item {
-            width: 150px;
-        }
+            max-width: 36rem;
+    
+            margin-bottom: 24px;
+    
+            h2 {
+                margin-bottom: 8px;
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+            }
+    
+            select {
+                width: 100%;
+                padding: 1.4rem 1.2rem;
+    
+                border: none;
+                border-radius: 0.8rem;
+    
+                cursor: pointer;
+                appearance: none;
+    
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
+        }  
     }
-
-    #price {
+  
+    #divTwo {
         width: 100%;
-        max-width: 34rem;
+        max-width: 36rem;
 
-        padding: 12px 14px;
-        
-        display: flex;
-        justify-content: center;
-        
-        margin-bottom: 24px;        
-      
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};    
+        #flexTags {
+            width: 100%;
+            min-height: 48px;
+
+            box-sizing: border-box;
+            border-radius:  0.8rem;
+
+            >h2 {
+                margin-bottom: 8px;
+
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+            }
+
+            #tags {
+                width: 100%;
+                min-width: 32rem;
+    
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+    
+                gap: 6px;
+                
+                padding: 5px 8px;
+                box-sizing: border-box;
+                margin-bottom: 24px;
+    
+                border-radius: 0.8rem;
+    
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+                
+                .item {
+                    width: 150px;
+                    max-width: 11.5rem;    
+                    height: 32px;
+                }
+    
+                .new {
+                    width: 100%;
+                    max-width: 11.5rem;
+                    height: 32px;
+                    background-color: transparent;              
+                }
+            }
+        }
+
+        #price {
+            width: 100%;
+            max-width: 36rem;
+    
+            margin-bottom: 24px;
+
+            #priceInput {
+                height: 4.8rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};    
+            } 
+        }
     }
 
     #description {
         width: 100%;
-        max-width: 34rem;
-
-        padding: 12px 14px;       
-        
-        display: flex;
-        justify-content: center;
-
+        max-width: 36rem;
         margin-bottom: 24px;
-        
-        background-color: ${({ theme }) => theme.COLORS.DARK_800};        
+
+        #descriptionInput {
+            width: 100%;
+            height: 17rem;
+
+            font-family: 'Roboto', sans-serif;
+
+            resize: none;
+            border: none;
+            border-radius: 0.8rem;
+
+            padding: 10px;
+            box-sizing: border-box;
+
+            color: ${({ theme }) => theme.COLORS.LIGHT_400};
+            background-color: ${({ theme }) => theme.COLORS.DARK_800};
+        }       
     }
 
     #save {
+        width: 100%;
+        max-width: 36rem;
+        
         margin-bottom: 50px;
     }
-`;
 
-export const Image = styled.div`
-    position: relative;
-    margin: -124px auto 32px;
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        max-width: 80%;
 
-    width: 186px;
-    height: 186px;
+        #top {
+            max-width: 100%;
+        }
+        
+        #divOne {
+            max-width: 100%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            gap: 3.2rem;
+            
+            #image {
+                max-width: 23rem;
+                margin-top: 27px;
 
-    > img {
-        height: 186px;
-        width: 186px;
-        border-radius: 50%;
-    }
+                >h2 {
+                    width: 100%;
+                    max-width: 130px;
+        
+                    display: flex;
+        
+                    margin-top: -27px;
+                    margin-bottom: 8px;
+                }
+            }
 
-    > label {
-        width: 48px;
-        height: 48px;
+            #name {
+                max-width: 100%;
+            }
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: absolute;
-        bottom: 7px;
-        right: 7px;
-
-        cursor: pointer;
-
-        input {
-            display: none;
+            #typeInput {
+                max-width: 36rem;
+            }
         }
 
-        svg {
-            width: 20px;
-            height: 20px;
-            color: red;
+        #divTwo {
+            max-width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 32px;
+    
+    
+            #flexTags {   
+                width: 100%;
+                height: 100%;
+                min-height: 48px;
+
+                padding: 0;
+
+                box-sizing: border-box;
+                border-radius: 0.8rem;
+
+
+                >h2 {
+                    margin-bottom: 8px;
+
+                    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+                }
+    
+                #tags {
+                    max-width: 100%;
+                    min-height: 32px;
+        
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    
+                    gap: 16px;
+                    padding: 5px 8px;
+                    margin-bottom: 32px;
+
+                    border-radius: 0.8rem;
+    
+                    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+
+                    .item{
+                        height: 36px;
+    
+                        background-color: ${({ theme }) => theme.COLORS.LIGHT_600};
+                    }
+    
+                    .new{
+                        height: 36px;
+                    }
+                }
+            }
+    
+            #price {
+                max-width: 25rem;
+            }
+        }
+
+        #description {
+            max-width: 100%;
+
+           
+
+            #descriptionInput {
+                height: 17rem;
+                width: 100%;
+
+                font-family: 'Roboto', sans-serif;
+
+                resize: none;
+                border: none;
+                border-radius: 10px;
+                
+                padding: 10px;
+                box-sizing: border-box;
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+   
+            }
+        }
+
+        #save {
+            max-width: 100%;
+            
+            display: flex;
+            justify-content: flex-end;
+
+            #saveButton {
+                width: 17rem;
+            }
         }
     }
 `;

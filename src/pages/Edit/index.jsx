@@ -1,10 +1,9 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 
 import { useAuth } from '../../hooks/auth';
 
-import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import { FiUpload } from "react-icons/fi";
 
 import { Container, Content } from "./styles";
@@ -135,10 +134,8 @@ export function Edit () {
                         </Link>
 
                         <h1>Editar Prato</h1>
-                    
-                    
-                    </div>          
-
+                        
+                    </div>
                     
                     <div id="divOne">                    
 

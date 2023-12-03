@@ -16,7 +16,6 @@ export const Content = styled.div`
     width: 100%;
     max-width: 50rem;
 
-
     margin: 0 auto;
     margin-top: 11px;
 
@@ -63,6 +62,7 @@ export const Content = styled.div`
 
             color: ${({ theme }) => theme.COLORS.LIGHT_100};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
+
             cursor: pointer;
 
             >h2 {
@@ -103,7 +103,8 @@ export const Content = styled.div`
             
             #inputName {
                 height: 4.8rem;
-                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
                 background-color: ${({ theme }) => theme.COLORS.DARK_800};
             }
         }
@@ -129,7 +130,7 @@ export const Content = styled.div`
                 cursor: pointer;
                 appearance: none;
 
-                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                color: ${({ theme }) => theme.COLORS.LIGHT_400};
                 background-color: ${({ theme }) => theme.COLORS.DARK_800};
             }
         }
@@ -141,7 +142,6 @@ export const Content = styled.div`
 
         #flexTags {
             width: 100%;
-            //height: 100%;
             min-height: 48px;
 
             box-sizing: border-box;
@@ -218,7 +218,7 @@ export const Content = styled.div`
             padding: 10px;
             box-sizing: border-box;
 
-            color: ${({ theme }) => theme.COLORS.LIGHT_500};
+            color: ${({ theme }) => theme.COLORS.LIGHT_400};
             background-color: ${({ theme }) => theme.COLORS.DARK_800};
         }
     }
@@ -231,6 +231,7 @@ export const Content = styled.div`
         justify-content: space-between;
 
         gap: 0.5rem;
+
         #delete {
             width: 100%;
             max-width: 160px;
@@ -259,7 +260,6 @@ export const Content = styled.div`
         #top {
             max-width: 100%;
         }
-
         
         #divOne {
             max-width: 100%;
@@ -374,45 +374,23 @@ export const Content = styled.div`
    
             }
         }
+
+        #buttons {
+            max-width: 100%;
+
+            justify-content: flex-end;
+
+            gap: 32px;
+
+            #delete {
+                width: 13rem;
+            }
+
+            #update {
+                width: 17rem;
+            }
+
+        }
     }
     
 `;
-
-/*export const Image = styled.div`
-    position: relative;
-    margin: -124px auto 32px;
-
-    width: 186px;
-    height: 186px;
-
-    > img {
-        height: 186px;
-        width: 186px;
-        border-radius: 50%;
-    }
-
-    > label {
-        width: 48px;
-        height: 48px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: absolute;
-        bottom: 7px;
-        right: 7px;
-
-        cursor: pointer;
-
-        input {
-            display: none;
-        }
-
-        svg {
-            width: 20px;
-            height: 20px;
-            color: red;
-        }
-    }
-`;*/
