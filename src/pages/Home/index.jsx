@@ -17,10 +17,11 @@ export function Home() {
     const carouselDrinks = useRef();
     
     const [search, setSearch] = useState("");
+
     const [ingredientSelected, setIngredientSelected] = useState([]);
     const [foods, setFoods] = useState([]);
 
-    const itemsPerPage = 3;
+    const itemsPerPage = 1;
     const totalItems = foods.length;
 
     const [currentDish, setCurrentDish] = useState(0);
@@ -81,7 +82,11 @@ export function Home() {
         
         <Container>            
 
-            <Header id="header"/>
+            <Header 
+                id="header"
+                setSearch={setSearch}
+                search={search}    
+            />
             
             <Form>
                 <div id="top">

@@ -9,7 +9,7 @@ import { PiReceipt, PiSignOut } from "react-icons/pi";
 import { Container, Nav, Notification } from "./styles";
 import { useNavigate } from 'react-router-dom';
 
-export function Header() {
+export function Header({ setSearch, search }) {
 
     const { signOut, user } = useAuth();
     const navigate = useNavigate();
@@ -30,11 +30,13 @@ export function Header() {
                 <h1>food explorer</h1> 
             </div>
 
-            <div className='search'>   
-                    <InputSearch />
-            </div>
-            
-
+            <input 
+                className='search'
+                type="search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}                     
+            />
+          
             <Notification>
                 {user.role === USER_ROLE.CUSTOMER && 
                     <div className='receipt'>
