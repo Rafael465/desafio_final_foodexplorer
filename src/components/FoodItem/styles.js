@@ -1,12 +1,16 @@
 import styled from "styled-components";
+import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 
 export const Container = styled.div`
     align-items: center;
     
-    margin-bottom: 8px;
     border-radius: 10px;
     
-    color: ${({ theme }) => theme.COLORS.GRAY_300};  
+    color: ${({ theme }) => theme.COLORS.GRAY_300}; 
+    
+    @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
+        margin-bottom: 0;
+    }
 `;
 
 export const Content = styled.div`
@@ -14,9 +18,10 @@ export const Content = styled.div`
         align-items: center;
 
         
+
         border-radius: 0.8rem;
         border: ${({ theme, $isNew }) => $isNew ? `1px dashed ${theme.COLORS.CAKE_100}` : `none` };
-        background-color: ${({ theme, $isNew }) => $isNew ? `transparent` : theme.COLORS.LIGHT_700 };        
+        background-color: ${({ theme, $isNew }) => $isNew ? `transparent` : theme.COLORS.LIGHT_600 };        
 
         > button {
             border: none;
@@ -39,9 +44,9 @@ export const Content = styled.div`
         > input {
             height: 25px;
     
-            padding: 16px 10px;
-            font-size: 1.6rem;        
-    
+            font-size: 1.6rem;
+            text-indent: 5px;
+
             border: none;
             border-radius: 0.8rem;
             background-color: transparent;

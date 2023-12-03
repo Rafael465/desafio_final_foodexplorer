@@ -94,14 +94,18 @@ export const Notification = styled.div`
         margin-right: 28px;
         margin-top: 60px;
 
-        #add {
-            cursor: pointer;
-        }
-
         svg {
             font-size: 32px;
         }
     
+        h2 {
+            display: none;
+        }      
+    }
+
+    .add {
+        cursor: pointer;
+
         h2 {
             display: none;
         }

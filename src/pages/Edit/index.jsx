@@ -135,14 +135,22 @@ export function Edit () {
                         </Link>
 
                         <h1>Editar Prato</h1>
-                    </div>                
                     
-                    <div id="divOne">
+                    
+                    </div>          
+
+                    
+                    <div id="divOne">                    
+
                         <div id="image">
+                            
+                            <h2>Imagem do prato</h2>      
+
                             <label htmlFor="file" id="select">
                                 <FiUpload />
                                 <h2>Escolha a imagem</h2>
                             </label>
+
                             <Input 
                                 id="file"
                                 type='file'
@@ -150,9 +158,9 @@ export function Edit () {
                             />
                         </div>
 
-                        <div className="input">
+                        <div id="name">
                             <Input
-                                id="name"
+                                id="inputName"
                                 value={title}
                                 title="Nome"
                                 placeholder="Ex.: Salada Ceasar"
@@ -171,26 +179,32 @@ export function Edit () {
                         </div>
                     </div>
 
+                    
                     <div id="divTwo">
-                        <div className="tags" >
-                            {
-                                ingredient.map((ingredient, index) => (
-                                    <FoodItem 
-                                        className="item"
-                                        key={String(index)}
-                                        value={ ingredient.name }
-                                        onClick={() => handleRemoveIngredient(ingredient)}
-                                    />
-                                ))                          
-                            }
-                            <FoodItem 
-                                className="new"
-                                $isNew 
-                                placeholder="Novo ingrediente" 
-                                onChange={e => setNewIngredient(e.target.value)}
-                                value={newIngredient}
-                                onClick={handleAddIngredient}
-                            />
+                        <div id="flexTags" >
+                                
+                            <h2>Ingredientes</h2>
+
+                            <div id="tags">
+                                {ingredient.map((ingredient, index) => (
+                                        <FoodItem 
+                                            className="item"
+                                            key={String(index)}
+                                            value={ ingredient.name }
+                                            onClick={() => handleRemoveIngredient(ingredient)}
+                                        />
+                                    ))                          
+                                }
+
+                                <FoodItem 
+                                    className="new"
+                                    $isNew 
+                                    placeholder="Novo ingrediente" 
+                                    onChange={e => setNewIngredient(e.target.value)}
+                                    value={newIngredient}
+                                    onClick={handleAddIngredient}
+                                />
+                            </div>
                         </div>
                         
                         <div id="price">
@@ -202,14 +216,12 @@ export function Edit () {
                                 onChange={e => setPrice(e.target.value)}
                             />
                         </div>
-                    </div>
-                
+                    </div>                
                 
                     <div id="description">
-                        <Input
+                        <textarea
                             id="descriptionInput"
                             value={description}
-                            title="Descrição"
                             placeholder="Descreva o prato"
                             onChange={e => setDescription(e.target.value)}
                         />
