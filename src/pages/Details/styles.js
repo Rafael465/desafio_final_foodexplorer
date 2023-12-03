@@ -41,11 +41,12 @@ export const Content = styled.div`
     }
 
     #description {
+        width: 100%;
+        max-width: 31rem;
 
         display: flex;
         align-items: center;
         margin: 0 auto;
-
 
         flex-direction: column;
 
@@ -64,25 +65,30 @@ export const Content = styled.div`
             color: ${({ theme }) => theme.COLORS.LIGHT_300};
         }
 
-        Section {
+        #tags {
+            width: 100%;
+            max-width: 25rem;        
+            
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            gap: 6px;
+            padding: 5px 8px;
             margin-bottom: 24px;
 
-            .tags {
-                width: 290px;
-                display: flex;
-                flex-wrap: wrap;
-            }
+            box-sizing: border-box;
+            border-radius: 0.8rem;
 
-            span {
-                display: flex;
+            svg {
+                display: none;
             }
-        }
-
-        .tags {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            width: 316px;
+            
+            .item {
+                width: 100%;
+                max-width: 8rem;    
+                height: 32px;
+            }
         }
 
         #buy {
@@ -92,7 +98,7 @@ export const Content = styled.div`
             width: 316px;
 
             margin-top: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 50px;
 
             .custom-button .icon {
                 display: flex;
@@ -125,22 +131,37 @@ export const Content = styled.div`
     }
 
     @media (min-width: 1024px) {
+        width: 100%;
+
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: center;
+
+        gap: 50px;
+        margin-bottom: 50px;
 
         .desktop {
-            
+
             >img {
                 margin-top: 42px;
                 width: 400px;
+                
             }
             
         }
 
         #description {
+            max-width: 58rem;
+
             align-items: start;
             margin: 0;
+            #tags {
+                max-width: 100%;
+
+                padding: 0;
+                gap: 15px;
+                justify-content: flex-start;
+            }
 
             > h1 {
                 margin-top: 145px;
@@ -154,21 +175,6 @@ export const Content = styled.div`
                 font-size: 2.4rem;
                 text-align: left;
             }
-
-            Section {
-
-                
-            
-                .tags {
-                    width: 550px;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-
-                    
-                }
-
-             }
 
             #buy {
                 margin-bottom: 0;

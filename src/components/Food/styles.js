@@ -145,30 +145,38 @@ export const Container = styled.div`
 
         #content {
 
-            gap: 20px;
 
-            img {
-                width: 17rem;
-            }
-
-            #foodName {
-            
-                > h1 {
-                    font-size: 2.4rem;
-                    
-                    color: ${({ theme }) => theme.COLORS.LIGHT_300};
-                }
-            }
-
-            p {
-                width: 28rem;
+            #details {
 
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
+                align-items: center;
 
-                font-size: 1.4rem;
-                text-align: center;
-                line-height: 160%;
+                gap: 20px;
+
+                img {
+                    width: 17rem;
+                }
+    
+                #foodName {
+                
+                    > h1 {
+                        font-size: 2.4rem;
+                        
+                        color: ${({ theme }) => theme.COLORS.LIGHT_300};
+                    }
+                }
+    
+                p {
+                    width: 28rem;
+    
+                    display: flex;
+                    justify-content: center;
+    
+                    font-size: 1.4rem;
+                    text-align: center;
+                    line-height: 160%;
+                }
             }
 
             h2 {
@@ -188,6 +196,10 @@ export const Container = styled.div`
 
                     h1 {
                         font-size: 2rem;
+                    }
+
+                    svg {
+                        cursor: pointer;
                     }
                 }
 

@@ -4,6 +4,7 @@ import { DEVICE_BREAKPOINTS } from "../../styles/deviceBrakepoints";
 export const Container = styled.div`
     align-items: center;
     
+    margin-bottom: 8px;
     border-radius: 10px;
     
     color: ${({ theme }) => theme.COLORS.GRAY_300}; 

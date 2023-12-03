@@ -1,15 +1,13 @@
 import { Container } from './styles';
 
-import { useAuth } from '../../hooks/auth';
-import { USER_ROLE } from '../../utils/roles';
-import { Ingredient } from '../Ingredient';
-import { api } from '../../services/api';
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { FiPlus, FiMinus } from "react-icons/fi";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { MdEdit } from "react-icons/md";
-import { useState } from 'react';
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { useNavigate } from 'react-router-dom';
+import { USER_ROLE } from '../../utils/roles';
+import { useState } from 'react';
+import { useAuth } from '../../hooks/auth';
+import { MdEdit } from "react-icons/md";
 
 export function Food({ data, ...rest }) {
     const { user } = useAuth();
@@ -26,6 +24,10 @@ export function Food({ data, ...rest }) {
 
     const handleEdit = () => {
         navigate(`/edit/${data.id}`);
+    }
+
+    const handleDetails = () => {
+        navigate(`/details/${data.id}`);
     }
 
     const handleButton = (e) => {
@@ -50,18 +52,23 @@ export function Food({ data, ...rest }) {
             }
 
             <div id='content'>
-                <img 
-                    src={`http://localhost:3333/files/${data.image}`}
-                    alt="prato de salada" 
-                />
 
-                <div id='foodName'>
-                    <h1>{data.title}</h1>
-                    <MdKeyboardArrowRight id="arrow"/>
+                <div id='details' onClick={handleDetails}>
+
+                    <img 
+                        src={`http://localhost:3333/files/${data.image}`}
+                        alt="prato de salada" 
+                    />
+
+                    <div id='foodName'>
+                        <h1>{data.title}</h1>
+                        <MdKeyboardArrowRight id="arrow"/>
+                    </div>
+
+                    
+                    <p>{data.description}</p>                
+
                 </div>
-
-                
-                <p>{data.description}</p>                
 
                 <h2>R$ {data.price}</h2>
 
