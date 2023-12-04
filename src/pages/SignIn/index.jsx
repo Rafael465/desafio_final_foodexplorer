@@ -22,7 +22,7 @@ export function SignIn() {
         <Container>
             <Form>
                 <div id="brand">
-                    <img src="/src/assets/polygon.png" alt="blue polygon" />
+                    <img src="/polygon.png" alt="blue polygon" />
                     <h1>food explorer</h1>                    
                 </div>
 
