@@ -85,7 +85,7 @@ export function Home() {
             
             <Form>
                 <div id="top">
-                    <img src="/src/assets/pngegg 1.png" alt="blue polygon" />
+                    <img src="/pngegg 1.png" alt="blue polygon" />
                     
                     <div>
                         <h1>Sabores inigualáveis</h1>

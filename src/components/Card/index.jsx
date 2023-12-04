@@ -11,7 +11,7 @@ export function Card ({ data, ...rest}) {
     return (
         <Container {...rest}>
             <Link to="/details/1" id='details'>
-                <img src="/src/assets/Mask group.png" alt="" />
+                <img src="/Mask group.png" alt="" />
                 <div id='title'>
                     <h2>Salada Ravanello</h2>
                     <MdKeyboardArrowRight id="arrow"/>

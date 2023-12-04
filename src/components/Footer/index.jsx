@@ -5,7 +5,7 @@ export function Footer() {
         <Container>
             <div className="bottom">
                 <div id="top">
-                    <img src="/src/assets/polygon gray.png" alt="blue polygon" />
+                    <img src="/polygon gray.png" alt="blue polygon" />
                     <p>food explorer</p>
                 </div>         
                 
