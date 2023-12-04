@@ -70,7 +70,7 @@ export function Add () {
         await updateImage({ imageFile : imageFile, id : response.data.id });
 
         alert("Prato criado com sucesso!");
-        //navigate("/");        
+        navigate("/");        
     }
 
     return (

@@ -72,7 +72,7 @@ export function Details ({ data, ...rest }) {
                             <ButtonText title="voltar"/>
                         </Link>
 
-                        <img src={`http://localhost:3333/files/${image}`} alt="prato de salada" />                        
+                        <img src={`http://localhost:3333/files/${image}`} alt="" />                        
                     
                     </div>
 

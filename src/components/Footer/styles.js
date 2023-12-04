@@ -5,8 +5,6 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
-
     
     .bottom {
         background-color: ${({ theme }) => theme.COLORS.DARK_700};
@@ -29,7 +27,6 @@ export const Container = styled.div`
         gap: 10px;
         align-items: center;
 
-
         > img {
             width: 25px;
             height: 25px;
@@ -43,6 +40,5 @@ export const Container = styled.div`
 
     p {
         font-size: 12px;
-    }
-    
+    }    
 `;

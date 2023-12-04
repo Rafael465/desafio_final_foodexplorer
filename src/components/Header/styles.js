@@ -30,7 +30,6 @@ export const Container = styled.div`
             width: 100%;
             height: 11rem;
 
-
             display: flex;
             align-items: flex-end;
 
@@ -152,9 +151,7 @@ export const Container = styled.div`
         align-items: center;
 
         justify-content: center;
-        gap: 32px;
-
-        
+        gap: 32px;        
 
         #top {
             margin-top: 0;
@@ -215,9 +212,7 @@ export const Container = styled.div`
 export const Nav = styled.div`
 
     margin-left: 28px;
-    margin-top: 60px;
-
-    
+    margin-top: 60px;    
 
     svg {
         font-size: 24px;
@@ -228,8 +223,6 @@ export const Nav = styled.div`
         display: none;
     }
 `;
-
-
 
 export const Notification = styled.div`
 

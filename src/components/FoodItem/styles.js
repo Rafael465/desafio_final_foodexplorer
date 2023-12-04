@@ -16,9 +16,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
         display: flex;
-        align-items: center;
-
-        
+        align-items: center;        
 
         border-radius: 0.8rem;
         border: ${({ theme, $isNew }) => $isNew ? `1px dashed ${theme.COLORS.CAKE_100}` : `none` };
