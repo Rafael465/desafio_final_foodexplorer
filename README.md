@@ -7,6 +7,33 @@ O uso desse programa será separado por dois tipos de usuário, o cliente,  que 
 
 Todas as página deste projeto foram desenvolvidas pensando no método de mobile-first.
 
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+### 🎲 Rodando o Back End (servidor)
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/tgmarinho/nlw1>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd nlw1
+
+# Vá para a pasta server
+$ cd server
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+
+# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+```
+
 Para começar, temos a tela de login e de sign up, para a criação de conta. O padrão para criação de conta é criar um usuário do tipo cliente, para testar a funcionalidade precisa entrar com uma conta admin pré definida, nesse caso com o email admin@email.com e a senha admin.
 
 Login desktop
