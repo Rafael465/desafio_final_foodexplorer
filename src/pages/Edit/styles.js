@@ -17,7 +17,7 @@ export const Content = styled.div`
     max-width: 50rem;
 
     margin: 0 auto;
-    margin-top: 11px;
+    margin-top: 100px;
 
     display: flex;
     flex-direction: column;
@@ -381,6 +381,8 @@ export const Content = styled.div`
             justify-content: flex-end;
 
             gap: 32px;
+
+            margin-bottom: 55px;
 
             #delete {
                 width: 13rem;

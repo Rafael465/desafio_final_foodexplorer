@@ -17,7 +17,7 @@ export const Content = styled.div`
     max-width: 50rem;
 
     margin: 0 auto;
-    margin-top: 11px;
+    margin-top: 100px;
 
     display: flex;
     flex-direction: column;
@@ -227,7 +227,7 @@ export const Content = styled.div`
         width: 100%;
         max-width: 36rem;
         
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 
     @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
