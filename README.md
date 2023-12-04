@@ -17,7 +17,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/Rafael465/desafio_final_foodexplorer_backend.git>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd #sua pasta aqui
@@ -41,7 +41,7 @@ $ npm start
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/tgmarinho/nlw1>
+$ git clone <https://github.com/Rafael465/desafio_final_foodexplorer_frontend.git>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd #sua pasta aqui
