@@ -36,6 +36,8 @@ function AuthProvider({ children }) {
         localStorage.removeItem("@foodexplorer:user");
 
         setData({});
+
+        navigate('/')
     }
 
     async function updateImage({ imageFile, id }) {

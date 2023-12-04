@@ -13,7 +13,7 @@ export const Container = styled.div`
     border-radius: 0.8rem;
 
     background-color: ${({ theme }) => theme.COLORS.DARK_900};
-
+    
     #heart {
         width: 100%;
         display: flex;
@@ -69,34 +69,41 @@ export const Container = styled.div`
         gap: 12px;
         padding-bottom: 20px;
 
-        img {
-            width: 8.8rem;
-        }
-    
-        #foodName {
+        #details {
             display: flex;
+            flex-direction: column;
             align-items: center;
 
-            > h1 {
-                flex: 1;        
-                text-align: left;
-                
-                font-size: 1.4rem;
-                line-height: 2.4rem;
-                font-family: 'Poppins', sans-serif;
-                font-weight: 500;
-                
-                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            img {
+                width: 8.8rem;
+            }
+        
+            #foodName {
+                display: flex;
+                align-items: center;
+    
+                > h1 {
+                    flex: 1;        
+                    text-align: left;
+                    
+                    font-size: 1.4rem;
+                    line-height: 2.4rem;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 500;
+                    
+                    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+                }
+        
+                >svg {
+                    color: ${({ theme }) => theme.COLORS.LIGHT_300};
+                }
             }
     
-            >svg {
-                color: ${({ theme }) => theme.COLORS.LIGHT_300};
+            p {
+                display: none;
             }
         }
 
-        p {
-            display: none;
-        }
     
         h2 {
             color: ${({ theme }) => theme.COLORS.CAKE_200};
@@ -144,7 +151,6 @@ export const Container = styled.div`
         height: 46rem;
 
         #content {
-
 
             #details {
 

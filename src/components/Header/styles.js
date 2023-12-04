@@ -11,6 +11,106 @@ export const Container = styled.div`
 
     background-color: ${({ theme }) => theme.COLORS.DARK_700};
 
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        transition: left 0.3s ease;
+        
+        background-color: ${({ theme }) => theme.COLORS.DARK_400};
+
+        .hamburger {
+            cursor: pointer;
+        }
+        
+        .closeContent {
+            width: 100%;
+            height: 11rem;
+
+
+            display: flex;
+            align-items: flex-end;
+
+            margin-bottom: 36px;
+
+            background-color: ${({ theme }) => theme.COLORS.DARK_700};
+            
+            .close {
+                display: flex;
+                align-items: center;
+
+                margin-left: 28px;
+                margin-bottom: 24px;
+
+                border: none;
+                
+                background-color: transparent;
+
+                >svg{
+                    font-size: 2.1rem;
+                    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+                }
+    
+                >h2 {
+                    font-size: 2.1rem;
+                    color: ${({ theme }) => theme.COLORS.LIGHT_100};
+                }
+            }
+        }
+
+        .content {
+            padding: 20px;
+            padding-top: 0;
+
+            .searchMenu {
+                width: 100%;
+
+                margin-bottom: 36px;
+
+                position: relative;
+                display: inline-block;
+
+                .searchIcon {
+                    position: absolute;
+
+                    top: 50%;
+                    left: 10px;
+                    transform: translateY(-50%);
+                    color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                }
+
+                .search {
+                    width: 100%;
+                    height: 48px;
+
+                    padding-left: 35px;
+                    padding-right: 10px;
+                    box-sizing: border-box;
+        
+                    border: none;
+                    border-radius: 0.8rem;
+
+                    color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                    background-color: ${({ theme }) => theme.COLORS.DARK_900};
+                }
+            }
+
+            >h2 {
+                font-size: 2.4rem;
+                margin-bottom: 20px;
+
+                cursor: pointer;
+            }
+        }
+    }
+
+    .menu.open {
+        left: 0;
+    }
+
     #top {
         display: flex;
         margin-top: 60px;
@@ -26,7 +126,7 @@ export const Container = styled.div`
         }
     }
 
-    .search {
+    .searchContent {
         display: none;
     }
 
@@ -41,12 +141,42 @@ export const Container = styled.div`
         justify-content: center;
         gap: 32px;
 
+        
+
         #top {
             margin-top: 0;
         }
 
-        .search {
-            display: block;
+        .searchContent {
+            position: relative;
+            display: inline-block;
+            
+
+            .searchIcon {
+                position: absolute;
+
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+            }
+
+            .search {
+                width: 300px;
+                height: 38px;
+
+                display: block;
+
+                padding-left: 30px;
+                padding-right: 10px;
+                
+                text-indent: 10px;
+                
+                border: none;
+                border-radius: 0.8rem;
+                color: ${({ theme }) => theme.COLORS.LIGHT_500};
+                background-color: ${({ theme }) => theme.COLORS.DARK_800};
+            }
         }
 
         #signOut {

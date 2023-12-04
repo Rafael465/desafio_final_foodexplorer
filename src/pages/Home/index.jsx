@@ -10,18 +10,14 @@ import { Footer } from "../../components/Footer";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function Home() {
-
-    const carouselDishes = useRef();
-    const carouselDesserts = useRef();
-    const carouselDrinks = useRef();
+export function Home() {  
     
     const [search, setSearch] = useState("");
 
     const [ingredientSelected, setIngredientSelected] = useState([]);
     const [foods, setFoods] = useState([]);
 
-    const itemsPerPage = 1;
+    const itemsPerPage = 3;
     const totalItems = foods.length;
 
     const [currentDish, setCurrentDish] = useState(0);
@@ -77,7 +73,6 @@ export function Home() {
         fetchFoods();
 
     }, [ingredientSelected, search]);
-
     return (
         
         <Container>            
@@ -104,80 +99,75 @@ export function Home() {
                 <div className="app">
 
                     <h2>Refeições</h2>
-
-                    <div className="test" ref={carouselDishes}>
-                        {[currentDish, (currentDish + 1) % dishes.length, (currentDish + 2) % dishes.length].map((index) => {
-                            const dish = dishes[index];
-                            if (dish) {
-                                return <Food key={String(dish.id)} data={dish} />;
-                              }
-                
-                              return null;
-                        })}
-                    </div>
-                    <div id="arrows">
-                        {totalItems > itemsPerPage && (
-                            <>
-                                <div className="left" onClick={handlePrevDish}>
-                                    <IoIosArrowBack />
-                                </div>                    
-                                <div className="right" onClick={handleNextDish}>
-                                    <IoIosArrowForward />
-                                </div>
-                            </>
-                        )}
-                    </div>
+                    {dishes.length > 0 && (
+                        <>
+                            <div className="test" >
+                                {dishes.slice(currentDish, currentDish + itemsPerPage).map((dish) => (
+                                    <Food key={String(dish.id)} data={dish} />
+                                ))}  
+                            </div>
+                            <div id="arrows">
+                                {totalItems > itemsPerPage && (
+                                    <>
+                                        <div className="left" onClick={handlePrevDish}>
+                                            <IoIosArrowBack />
+                                        </div>                    
+                                        <div className="right" onClick={handleNextDish}>
+                                            <IoIosArrowForward />
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        </>
+                    )}
 
                     <h2>Sobremesas</h2>
-                                                         
-                    <div className="test" ref={carouselDesserts}>
-                        {[currentDessert, (currentDessert + 1) % desserts.length, (currentDessert + 2) % desserts.length].map((index) => {
-                            const dessert = desserts[index];
-                            if (dessert) {
-                                return <Food key={String(dessert.id)} data={dessert} />;
-                              }
-                
-                              return null;
-                        })}
-                    </div>
-                    <div id="arrows">
-                        {totalItems > itemsPerPage && (
-                            <>
-                                <div className="left" onClick={handlePrevDessert}>
-                                    <IoIosArrowBack />
-                                </div>                    
-                                <div className="right" onClick={handleNextDessert}>
-                                    <IoIosArrowForward />
-                                </div>
-                            </>
-                        )}
-                    </div>
+                    {dishes.length > 0 && (
+                        <>
+                            <div className="test" >
+                                {desserts.slice( currentDessert, currentDessert + itemsPerPage).map((dessert) => (
+                                    <Food key={String(dessert.id)} data={dessert} />
+                                ))}
+                            </div>
+                            <div id="arrows">
+                                {totalItems > itemsPerPage && (
+                                    <>
+                                        <div className="left" onClick={handlePrevDessert}>
+                                            <IoIosArrowBack />
+                                        </div>                    
+                                        <div className="right" onClick={handleNextDessert}>
+                                            <IoIosArrowForward />
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        </>
+                    )}
+
 
                     <h2>Bebidas</h2>
-                                                            
-                    <div className="test" ref={carouselDrinks}>
-                        {[currentDrink, (currentDrink + 1) % drinks.length, (currentDrink + 2) % drinks.length].map((index) => {
-                            const drink = drinks[index];
-                            if (drink) {
-                                return <Food key={String(drink.id)} data={drink} />;
-                              }
-                
-                              return null;
-                        })}
-                    </div>
-                    <div id="arrows">
-                        {totalItems > itemsPerPage && (
-                            <>
-                                <div className="left" onClick={handlePrevDrink}>
-                                    <IoIosArrowBack />
-                                </div>                    
-                                <div className="right" onClick={handleNextDrink}>
-                                    <IoIosArrowForward />
-                                </div>
-                            </>
-                        )}
-                    </div>
 
+                    {dishes.length > 0 && (
+                        <>
+                           <div className="test" >
+                                {drinks.slice( currentDrink, currentDrink + itemsPerPage).map((drink) => (
+                                    <Food key={String(drink.id)} data={drink} />
+                                ))}
+                            </div>
+                            <div id="arrows">
+                                {totalItems > itemsPerPage && (
+                                    <>
+                                        <div className="left" onClick={handlePrevDrink}>
+                                            <IoIosArrowBack />
+                                        </div>                    
+                                        <div className="right" onClick={handleNextDrink}>
+                                            <IoIosArrowForward />
+                                        </div>
+                                    </>
+                                )}
+                            </div>
+                        </>
+                    )}
                 </div>          
             </Content>
 
