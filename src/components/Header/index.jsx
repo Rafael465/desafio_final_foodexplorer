@@ -68,7 +68,7 @@ export function Header({ setSearch, search }) {
             </div>
 
             <div id="top">
-                <img src="/src/assets/polygon.png" alt="blue polygon" />
+                <img src="../../assets/polygon.png" alt="blue polygon" />
 
                 <div className='logoName'>
                     <h1>food explorer</h1>
