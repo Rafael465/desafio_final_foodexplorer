@@ -124,6 +124,19 @@ export const Container = styled.div`
         > h1 {
             font-size: 21px;
         }
+
+        .logoName {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            margin-top: 2px;
+
+            >h2 {
+                font-size: 1.2rem;
+                color: aqua;
+            }
+        }
     }
 
     .searchContent {

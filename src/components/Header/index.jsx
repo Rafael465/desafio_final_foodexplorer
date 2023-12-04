@@ -69,7 +69,13 @@ export function Header({ setSearch, search }) {
 
             <div id="top">
                 <img src="/src/assets/polygon.png" alt="blue polygon" />
-                <h1>food explorer</h1> 
+
+                <div className='logoName'>
+                    <h1>food explorer</h1>
+                    {user.role === USER_ROLE.ADMIN && 
+                        <h2>admin</h2>
+                    }
+                </div>
             </div>
 
             <div className='searchContent'>
