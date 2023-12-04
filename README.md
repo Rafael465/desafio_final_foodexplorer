@@ -20,7 +20,31 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 $ git clone <https://github.com/tgmarinho/nlw1>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd nlw1
+$ cd #sua pasta aqui
+
+# Vá para a pasta server
+$ cd server
+
+# Instale as dependências
+$ npm install
+
+# Execute as migrations
+$ npm migrate
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm start
+
+# O servidor inciará na porta:3333 - acesse <http://localhost:3333>
+```
+
+### 🎲 Rodando o Front End (aplicação)
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/tgmarinho/nlw1>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd #sua pasta aqui
 
 # Vá para a pasta server
 $ cd server
@@ -29,7 +53,7 @@ $ cd server
 $ npm install
 
 # Execute a aplicação em modo de desenvolvimento
-$ npm start
+$ npm run dev
 
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
