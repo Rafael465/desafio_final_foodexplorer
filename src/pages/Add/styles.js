@@ -67,6 +67,7 @@ export const Content = styled.div`
             cursor: pointer;
 
             >h2 {
+                display: none;
             }
             
             #select {
@@ -90,6 +91,7 @@ export const Content = styled.div`
             }
     
             #file {
+                display: none;
             }        
         }
         

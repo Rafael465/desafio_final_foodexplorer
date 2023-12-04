@@ -79,6 +79,7 @@ export function Add () {
             <Header/>   
 
             <Content>
+
                 <div id="top">
                     <Link id="back" to="/">
                         <MdKeyboardArrowLeft id="arrow"/>
@@ -90,14 +91,15 @@ export function Add () {
                 </div>                
                 
                 <div id="divOne">
+
                     <div id="image">
 
                         <h2>Imagem do prato</h2>                        
 
-                        <div id="select">
+                        <label htmlFor="file" id="select">
                             <FiUpload />
                             <h2>Escolha a imagem</h2>
-                        </div>
+                        </label>
 
                         <Input 
                             id="file"
