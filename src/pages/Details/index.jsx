@@ -6,7 +6,9 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import { Ingredient } from "../../components/Ingredient";
 import { ButtonText } from "../../components/ButtonText";
 import { PiReceipt } from "react-icons/pi";
+import { USER_ROLE } from '../../utils/roles';
 import { FoodItem } from "../../components/FoodItem";
+import { useAuth } from '../../hooks/auth';
 import { Section } from "../../components/Section";
 import { Header } from '../../components/Header';
 import { Button } from '../../components/Button';
@@ -15,13 +17,29 @@ import { api } from "../../services/api";
 
 export function Details ({ data, ...rest }) {
     const { id } = useParams();
+    const navigate = useNavigate();
+    const { user } = useAuth();
+
 
     const [title, setTitle] = useState("");
-
     const [price, setPrice] = useState("");
     const [ingredient, setIngredient] = useState([]);
     const [description, setDescription] = useState("");
     const [image, setImage]= useState("");
+
+    const [amount, setAmount] = useState(0);
+    
+    const handleIncrement = () => {
+        setAmount(prevAmount => prevAmount +1);
+    };
+
+    const handleDecrement = () => {
+        setAmount(prevAmount => prevAmount -1);
+    };
+
+    const handleEdit = () => {
+        navigate(`/edit/${id}`);
+    }
 
     useEffect(() => {
         async function fetchFoodDetails() {
@@ -30,7 +48,6 @@ export function Details ({ data, ...rest }) {
                 const food = response.data;
 
                 setTitle(food.title);
-                //setType(food.type);
                 setPrice(food.price);
                 setDescription(food.description);
                 setImage(food.image);
@@ -75,13 +92,22 @@ export function Details ({ data, ...rest }) {
                             }
                         </div>
                         
-                        <div id="buy">
-                            <FiMinus />
-                            <h1>01</h1>
-                            <FiPlus />
+                        {user.role === USER_ROLE.CUSTOMER && 
+                            <div id="buy">
+                                <FiMinus onClick={handleDecrement}/>
+                                <h1>{amount}</h1>
+                                <FiPlus onClick={handleIncrement}/>
 
-                            <Button icon={<PiReceipt />}  title={`pedir-R$ ${price}`} className="custom-button" />
-                        </div>
+                                <Button icon={<PiReceipt />}  title={`pedir-R$ ${price}`} className="custom-button" />
+                            </div>
+                        }
+
+                        {user.role === USER_ROLE.ADMIN && 
+                            <div id="buy">
+                                <Button title="Editar Prato" onClick={handleEdit}/>
+                            </div>
+                        }
+
                     </div>                    
                 </Content>
             </main>
