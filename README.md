@@ -97,5 +97,10 @@ Aqui é possível selecionar uma imagem para o prato, criar nome, definir em qua
 Abaixo voce encontra o link do deploy do site desta aplicação onde pode também realizar alguns testes.
 Como são utilizadas ferramentas gratuitas para a publicação, pode ser observada alguma instabilidade ao acessar o link, sendo necessário esperar alguns minutinhos para conseguir efetuar o login.
 
+https://foodexplorfrontend.netlify.app
+
+*Infelizmente o deploy não está funcionando como deveria. Na máquina local funciona corretamente, porem abrindo pelo netlify precisei passar as imagens para a pasta publica para ele reconhecer, e a criação de pratos também não funciona corretamente. Localmente funciona como deveria, para isso é necessário alterar na pasta services/api de volta para http://localhost:3333.
+
 Espero que tenha curtido, tenha um ótimo dia.
+
 # desafio_final_foodexplorer_frontend
